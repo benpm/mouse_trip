@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torus Platformer</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #111; color: #fff; font-family: monospace; user-select: none; touch-action: none; }
+        #ui { position: absolute; top: 10px; left: 10px; z-index: 10; text-shadow: 1px 1px 0 #000; pointer-events: none; }
+        .pass { color: #0f0; }
+        .fail { color: #f00; }
+        #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; display: none; z-index: 20; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <div id="tests">Awaiting setup...</div>
+        <div id="level-ui">Level: 1</div>
+        <div>Controls: Left/Right Arrows (or Swipe), Up to Jump</div>
+    </div>
+    <div id="loading">Loading Assets...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+    <script>
+        const settings = { 
+            proj: 'Perspective', fov: 60, orthoSize: 10, rotX: Math.PI / 2, rotY: 0, dist: 20, wireframe: false,
+            mapW: 60, mapH: 18, density: 0.25, ringFreq: 9, R: 20, r: 6,
+            shape: 0, spiralPitch: 40
+        };
+        const gui = new dat.GUI();
+        
+        const camFolder = gui.addFolder('Camera');
+        camFolder.add(settings, 'proj', ['Perspective', 'Orthographic']);
+        camFolder.add(settings, 'fov', 10, 120);
+        camFolder.add(settings, 'orthoSize', 5, 50);
+        camFolder.add(settings, 'rotX', -Math.PI, Math.PI).name('Pitch');
+        camFolder.add(settings, 'rotY', -Math.PI, Math.PI).name('Yaw');
+        camFolder.add(settings, 'dist', 5, 100).name('Distance');
+        camFolder.add(settings, 'wireframe').name('Wireframe');
+
+        function updateTorus() {
+            for(let i=0; i<3; i++) {
+                if (tileMaterials[i]) {
+                    tileMaterials[i].uniforms.torusParams.value.set(settings.R, settings.r);
+                    tileMaterials[i].uniforms.shape.value = settings.shape;
+                    tileMaterials[i].uniforms.spiralPitch.value = settings.spiralPitch;
+                }
+            }
+            if (playerMat) {
+                playerMat.uniforms.torusParams.value.set(settings.R, settings.r);
+                playerMat.uniforms.shape.value = settings.shape;
+                playerMat.uniforms.spiralPitch.value = settings.spiralPitch;
+            }
+        }
+
+        const levelFolder = gui.addFolder('Level');
+        levelFolder.add(settings, 'mapW', 20, 200, 1).name('Width').onFinishChange(rebuildLevel);
+        levelFolder.add(settings, 'mapH', 10, 60, 1).name('Height').onFinishChange(rebuildLevel);
+        levelFolder.add(settings, 'density', 0.05, 0.8).name('Density').onFinishChange(rebuildLevel);
+        levelFolder.add(settings, 'ringFreq', 3, 20, 1).name('Ring Freq').onFinishChange(rebuildLevel);
+        levelFolder.add(settings, 'R', 5, 100).name('Major Radius (R)').onChange(updateTorus);
+        levelFolder.add(settings, 'r', 1, 30).name('Minor Radius (r)').onChange(updateTorus);
+        levelFolder.add(settings, 'shape', { Torus: 0, Spiral: 1 }).name('Shape').onChange(v => { settings.shape = parseInt(v); updateTorus(); });
+        levelFolder.add(settings, 'spiralPitch', 10, 100).name('Spiral Pitch').onChange(updateTorus);
+
+        const TILES = {
+            EMPTY: { id: 0, solid: false, door: false, spikes: false, tex: 0, col: 0, row: 0 },
+            BASE: { id: 1, solid: true, door: false, spikes: false, tex: 1, col: 0, row: 1 },
+            PLATFORM_L: { id: 14, solid: true, door: false, spikes: false, tex: 0, col: 3, row: 1 },
+            PLATFORM_M: { id: 15, solid: true, door: false, spikes: false, tex: 0, col: 4, row: 1 },
+            PLATFORM_R: { id: 16, solid: true, door: false, spikes: false, tex: 0, col: 5, row: 1 },
+            DOOR: { id: 99, solid: false, door: true, spikes: false, tex: 0, col: 8, row: 9 },
+            SPIKES: { id: 69, solid: false, door: false, spikes: true, tex: 1, col: 12, row: 0 }
+        };
+        const TILE_PROPS = {};
+        Object.values(TILES).forEach(t => TILE_PROPS[t.id] = t);
+        const getTileProps = (id) => TILE_PROPS[id] || TILES.EMPTY;
+
+        const textures = {};
+        const atlasData = {};
+        let mapData;
+        let currentLevel = 1;
+
+        const scene = new THREE.Scene();
+        const perspCam = new THREE.PerspectiveCamera(settings.fov, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const orthoCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        function getBasis(x, y) {
+            const theta = (x / settings.mapW) * 2.0 * Math.PI;
+            const phi = (y / settings.mapH) * 2.0 * Math.PI;
+            
+            if (settings.shape === 0) {
+                const pos = new THREE.Vector3(
+                    (settings.R + settings.r * Math.cos(phi)) * Math.cos(theta),
+                    (settings.R + settings.r * Math.cos(phi)) * Math.sin(theta),
+                    settings.r * Math.sin(phi)
+                );
+                const T = new THREE.Vector3(-Math.sin(theta), Math.cos(theta), 0).normalize();
+                const N = new THREE.Vector3(Math.cos(phi)*Math.cos(theta), Math.cos(phi)*Math.sin(theta), Math.sin(phi)).normalize();
+                const Z = new THREE.Vector3().crossVectors(T, N).normalize();
+                return { pos, T, N, Z };
+            } else {
+                const h = settings.spiralPitch / (2.0 * Math.PI);
+                const C = new THREE.Vector3(settings.R * Math.cos(theta), settings.R * Math.sin(theta), h * theta);
+                const dC = new THREE.Vector3(-settings.R * Math.sin(theta), settings.R * Math.cos(theta), h);
+                const Tc = dC.clone().normalize();
+                const Nc = new THREE.Vector3(Math.cos(theta), Math.sin(theta), 0);
+                const Bc = new THREE.Vector3().crossVectors(Nc, Tc).normalize();
+
+                const pos = C.clone()
+                    .add(Nc.clone().multiplyScalar(settings.r * Math.cos(phi)))
+                    .add(Bc.clone().multiplyScalar(settings.r * Math.sin(phi)));
+
+                const N = new THREE.Vector3().subVectors(pos, C).normalize();
+                const T = Tc.clone().projectOnPlane(N).normalize();
+                const Z = new THREE.Vector3().crossVectors(T, N).normalize();
+                return { pos, T, N, Z };
+            }
+        }
+
+        const guessGrid = (img, name) => {
+            if (name.startsWith('p1')) return { cols: 7, rows: 3 };
+            let cols = Math.max(1, Math.round(img.width / 70));
+            let rows = Math.max(1, Math.round(img.height / 70));
+            if (Math.abs(img.width - cols * 70) > 20) {
+                cols = name.startsWith('enemies') ? 5 : 14;
+                rows = Math.max(1, Math.round(img.height / (img.width / cols)));
+            }
+            return { cols, rows };
+        };
+
+        const setTile = (x, y, tile) => {
+            x = (x % settings.mapW + settings.mapW) % settings.mapW;
+            y = (y % settings.mapH + settings.mapH) % settings.mapH;
+            const idx = (y * settings.mapW + x) * 4;
+            mapData[idx + 0] = tile.col;
+            mapData[idx + 1] = tile.row;
+            mapData[idx + 2] = tile.tex;
+            mapData[idx + 3] = tile.id;
+        };
+
+        const getTile = (x, y) => {
+            x = (x % settings.mapW + settings.mapW) % settings.mapW;
+            y = (y % settings.mapH + settings.mapH) % settings.mapH;
+            return mapData[(y * settings.mapW + x) * 4 + 3];
+        };
+
+        function runTests(geo) {
+            let fails = 0;
+            const assert = (c, m) => { if (!c) { console.error("Test Failed:", m); fails++; } };
+
+            assert(geo.parameters.widthSegments === settings.mapW * 4, "Geometry horizontally subdivided");
+            assert(geo.parameters.heightSegments === settings.mapH * 4, "Geometry vertically subdivided");
+            assert(getTileProps(TILES.BASE.id).solid === true, "Standard tile is solid");
+            assert(getTileProps(TILES.DOOR.id).solid === false, "Door tile is not solid");
+            assert(getTileProps(TILES.DOOR.id).door === true, "Door tile has door property");
+            assert(getTileProps(TILES.SPIKES.id).solid === false, "Spikes are not solid");
+            assert(getTileProps(TILES.SPIKES.id).spikes === true, "Spikes tile has spikes property");
+            
+            const prevTile = getTileProps(getTile(5, 5));
+            setTile(5, 5, TILES.BASE);
+            assert(getTile(5, 5) === TILES.BASE.id, "Tile mapping write/read");
+            assert(getTile(settings.mapW + 5, 5) === TILES.BASE.id, "Tile mapping X wrapping");
+            assert(getTile(5, settings.mapH + 5) === TILES.BASE.id, "Tile mapping Y wrapping");
+            setTile(5, 5, prevTile);
+
+            const b = getBasis(0, 0);
+            if (settings.shape === 0) {
+                assert(Math.abs(b.pos.x - (settings.R+settings.r)) < 0.01, "Torus basis position");
+            } else {
+                assert(Math.abs(b.pos.x - (settings.R+settings.r)) < 0.01, "Spiral basis position");
+            }
+
+            const ui = document.getElementById('tests');
+            ui.innerHTML = fails === 0 ? `<span class="pass">✓ Tests Passed</span>` : `<span class="fail">✗ ${fails} Tests Failed</span>`;
+        }
+
+        const createPlaceholderTexture = (cols) => {
+            const canvas = document.createElement('canvas');
+            canvas.width = cols * 70;
+            canvas.height = 10 * 70;
+            const ctx = canvas.getContext('2d');
+            for(let r=0; r<10; r++) {
+                for(let c=0; c<cols; c++) {
+                    ctx.fillStyle = `hsl(${Math.random()*360}, 60%, 40%)`;
+                    ctx.fillRect(c*70, r*70, 70, 70);
+                }
+            }
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.magFilter = THREE.NearestFilter;
+            tex.minFilter = THREE.NearestFilter;
+            return tex;
+        };
+
+        const loadAssets = async () => {
+            document.getElementById('loading').style.display = 'block';
+            const imgUrls = {
+                'p1_spritesheet.png': 'https://i.imgur.com/VaWuQug.png',
+                'hud_spritesheet.png': 'https://i.imgur.com/sspKVxM.png',
+                'tiles_spritesheet.png': 'https://i.imgur.com/kQ3vnRZ.png',
+                'tiles2_spritesheet.png': 'https://i.imgur.com/AR1zgMA.png',
+                'items_spritesheet.png': 'https://i.imgur.com/nQlR3te.png',
+                'enemies_spritesheet.png': 'https://i.imgur.com/B9t0JdK.png'
+            };
+            const loader = new THREE.TextureLoader();
+            loader.setCrossOrigin('anonymous');
+            
+            await Promise.all(Object.entries(imgUrls).map(([name, url]) => new Promise(resolve => {
+                loader.load(url, tex => {
+                    tex.magFilter = THREE.NearestFilter;
+                    tex.minFilter = THREE.NearestFilter;
+                    textures[name] = tex;
+                    atlasData[name] = guessGrid(tex.image, name);
+                    resolve();
+                }, undefined, (err) => {
+                    console.error("Failed to load: " + url, err);
+                    textures[name] = createPlaceholderTexture(14);
+                    atlasData[name] = { cols: 14, rows: 10 };
+                    resolve();
+                });
+            })));
+
+            document.getElementById('loading').style.display = 'none';
+            initGame();
+        };
+
+        const tileMeshes = [], tileWireMeshes = [], tileMaterials = [];
+        let playerMesh, playerMat, playerWireMesh;
+        const player = { x: 0, y: 5, w: 0.8, h: 1.2, vx: 0, vy: 0, grounded: false, frame: 0, dir: 1 };
+        const keys = { ArrowLeft: false, ArrowRight: false, ArrowUp: false };
+
+        window.addEventListener('keydown', e => { if (keys.hasOwnProperty(e.code)) keys[e.code] = true; });
+        window.addEventListener('keyup', e => { if (keys.hasOwnProperty(e.code)) keys[e.code] = false; });
+        window.addEventListener('resize', () => renderer.setSize(window.innerWidth, window.innerHeight));
+
+        let tStartX = 0, tStartY = 0, pDist = 0, pStartDist = 0;
+        window.addEventListener('touchstart', e => {
+            if (e.touches.length === 1) {
+                tStartX = e.touches[0].clientX;
+                tStartY = e.touches[0].clientY;
+            } else if (e.touches.length === 2) {
+                pDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+                pStartDist = settings.dist;
+            }
+        }, {passive: false});
+
+        window.addEventListener('touchmove', e => {
+            e.preventDefault();
+            if (e.touches.length === 1) {
+                keys.ArrowRight = e.touches[0].clientX - tStartX > 20;
+                keys.ArrowLeft = e.touches[0].clientX - tStartX < -20;
+                keys.ArrowUp = e.touches[0].clientY - tStartY < -40;
+            } else if (e.touches.length === 2) {
+                const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+                settings.dist = Math.max(5, Math.min(100, pStartDist + (pDist - dist) * 0.1));
+                gui.updateDisplay();
+            }
+        }, {passive: false});
+
+        window.addEventListener('touchend', e => {
+            if (e.touches.length === 0) {
+                keys.ArrowLeft = keys.ArrowRight = keys.ArrowUp = false;
+            } else if (e.touches.length === 1) {
+                tStartX = e.touches[0].clientX;
+                tStartY = e.touches[0].clientY;
+            }
+        });
+
+        const getVertexProjectionCode = (isPlayer) => `
+            uniform vec2 mapSize;
+            uniform vec2 torusParams;
+            uniform vec2 mapOffset;
+            uniform int shape;
+            uniform float spiralPitch;
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                vec2 absPos = position.xy + mapOffset;
+                float theta = (absPos.x / mapSize.x) * 2.0 * 3.14159265;
+                float phi = (absPos.y / mapSize.y) * 2.0 * 3.14159265;
+                float R = torusParams.x;
+                float r = torusParams.y ${isPlayer ? '+ 0.05' : ''};
+                vec3 p;
+                if (shape == 0) {
+                    p = vec3((R + r * cos(phi)) * cos(theta), (R + r * cos(phi)) * sin(theta), r * sin(phi));
+                } else {
+                    float h = spiralPitch / (2.0 * 3.14159265);
+                    vec3 C = vec3(R * cos(theta), R * sin(theta), h * theta);
+                    vec3 dC = normalize(vec3(-R * sin(theta), R * cos(theta), h));
+                    vec3 Nc = vec3(cos(theta), sin(theta), 0.0);
+                    vec3 Bc = normalize(cross(Nc, dC));
+                    p = C + r * (Nc * cos(phi) + Bc * sin(phi));
+                }
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+            }
+        `;
+
+        function rebuildLevel() {
+            document.getElementById('level-ui').innerText = 'Level: ' + currentLevel;
+            mapData = new Uint8Array(settings.mapW * settings.mapH * 4);
+            for (let y = 0; y < settings.mapH; y += 3) {
+                for (let x = 0; x < settings.mapW; x++) {
+                    if (y % settings.ringFreq === 0) {
+                        if (x % 15 < 13) setTile(x, y, TILES.BASE);
+                    } else {
+                        if (Math.random() < settings.density) {
+                            const len = 2 + Math.floor(Math.random() * 4);
+                            for (let p = 0; p < len; p++) {
+                                setTile(x + p, y, p === 0 ? TILES.PLATFORM_L : p === len - 1 ? TILES.PLATFORM_R : TILES.PLATFORM_M);
+                                if (p > 0 && p < len - 1 && Math.random() < 0.3) {
+                                    setTile(x + p, y + 1, TILES.SPIKES);
+                                }
+                            }
+                            x += len;
+                        }
+                    }
+                }
+            }
+
+            if (currentLevel < 3) {
+                setTile(settings.mapW - 5, 2, TILES.PLATFORM_M);
+                setTile(settings.mapW - 5, 3, TILES.DOOR); 
+            }
+
+            const dataTex = new THREE.DataTexture(mapData, settings.mapW, settings.mapH, THREE.RGBAFormat);
+            dataTex.magFilter = THREE.NearestFilter;
+            dataTex.minFilter = THREE.NearestFilter;
+            dataTex.needsUpdate = true;
+
+            const tileGeo = new THREE.PlaneGeometry(settings.mapW, settings.mapH, settings.mapW * 4, settings.mapH * 4);
+            tileGeo.translate(settings.mapW/2, settings.mapH/2, 0);
+
+            if (tileMaterials.length > 0) {
+                for(let i=0; i<3; i++) {
+                    tileMaterials[i].uniforms.mapData.value = dataTex;
+                    tileMaterials[i].uniforms.mapSize.value.set(settings.mapW, settings.mapH);
+                    tileMeshes[i].geometry.dispose();
+                    tileMeshes[i].geometry = tileGeo;
+                    tileWireMeshes[i].geometry = tileGeo;
+                }
+                playerMat.uniforms.mapSize.value.set(settings.mapW, settings.mapH);
+                updateTorus();
+                
+                if (settings.shape === 0) player.x = player.x % settings.mapW;
+                player.y = player.y % settings.mapH;
+                runTests(tileGeo);
+                return;
+            }
+
+            const tileFrag = `
+                uniform sampler2D tileTex0;
+                uniform sampler2D tileTex1;
+                uniform sampler2D mapData;
+                uniform vec2 texGrid0;
+                uniform vec2 texGrid1;
+                uniform vec2 mapSize;
+                uniform float time;
+                varying vec2 vUv;
+                void main() {
+                    vec2 gridPos = vUv * mapSize;
+                    vec2 tileCoord = floor(gridPos + 0.001);
+                    vec2 tileUv = fract(gridPos + 0.001);
+                    vec2 mapUv = (tileCoord + 0.5) / mapSize;
+                    vec4 data = texture2D(mapData, mapUv);
+                    
+                    int id = int(data.a * 255.0 + 0.5); 
+                    if (id == 0) discard;
+                    
+                    float col = floor(data.r * 255.0 + 0.5);
+                    float row = floor(data.g * 255.0 + 0.5);
+                    int texIdx = int(data.b * 255.0 + 0.5);
+                    
+                    vec4 color;
+                    vec2 finalUv;
+                    if (texIdx == 0) {
+                        float glRow = texGrid0.y - 1.0 - row; 
+                        finalUv = (vec2(col, glRow) + clamp(tileUv, 0.01, 0.99)) / texGrid0;
+                        color = texture2D(tileTex0, finalUv);
+                    } else {
+                        float glRow = texGrid1.y - 1.0 - row; 
+                        finalUv = (vec2(col, glRow) + clamp(tileUv, 0.01, 0.99)) / texGrid1;
+                        color = texture2D(tileTex1, finalUv);
+                    }
+
+                    if (color.a < 0.1) discard;
+
+                    if (id == 99) {
+                        float pulse = sin(time * 8.0) * 0.5 + 0.5;
+                        color.rgb += vec3(pulse * 0.8, pulse * 0.2, pulse * 0.8);
+                    }
+
+                    if (!gl_FrontFacing) color.rgb *= 0.15;
+                    gl_FragColor = color;
+                }
+            `;
+
+            for(let i=0; i<3; i++) {
+                const uniforms = {
+                    tileTex0: { value: textures['tiles_spritesheet.png'] },
+                    tileTex1: { value: textures['tiles2_spritesheet.png'] },
+                    mapData: { value: dataTex },
+                    texGrid0: { value: new THREE.Vector2(atlasData['tiles_spritesheet.png'].cols, atlasData['tiles_spritesheet.png'].rows) },
+                    texGrid1: { value: new THREE.Vector2(atlasData['tiles2_spritesheet.png'].cols, atlasData['tiles2_spritesheet.png'].rows) },
+                    mapSize: { value: new THREE.Vector2(settings.mapW, settings.mapH) },
+                    torusParams: { value: new THREE.Vector2(settings.R, settings.r) },
+                    mapOffset: { value: new THREE.Vector2(0, 0) },
+                    shape: { value: settings.shape },
+                    spiralPitch: { value: settings.spiralPitch },
+                    time: { value: 0 }
+                };
+
+                const mat = new THREE.ShaderMaterial({
+                    uniforms: uniforms, vertexShader: getVertexProjectionCode(false), fragmentShader: tileFrag,
+                    side: THREE.DoubleSide, transparent: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1
+                });
+                tileMaterials.push(mat);
+                const mesh = new THREE.Mesh(tileGeo, mat);
+                mesh.frustumCulled = false;
+                tileMeshes.push(mesh);
+                scene.add(mesh);
+
+                const wireMat = new THREE.ShaderMaterial({
+                    uniforms: uniforms, vertexShader: getVertexProjectionCode(false),
+                    fragmentShader: tileFrag.replace('gl_FragColor = color;', 'gl_FragColor = vec4(0.0, 1.0, 1.0, 0.8);'),
+                    side: THREE.DoubleSide, transparent: true, wireframe: true
+                });
+                const wMesh = new THREE.Mesh(tileGeo, wireMat);
+                wMesh.frustumCulled = false;
+                tileWireMeshes.push(wMesh);
+                scene.add(wMesh);
+            }
+
+            const pUniforms = {
+                playerTex: { value: textures['p1_spritesheet.png'] },
+                mapSize: { value: new THREE.Vector2(settings.mapW, settings.mapH) },
+                torusParams: { value: new THREE.Vector2(settings.R, settings.r) },
+                mapOffset: { value: new THREE.Vector2(0, 0) },
+                shape: { value: settings.shape },
+                spiralPitch: { value: settings.spiralPitch },
+                uvOffset: { value: new THREE.Vector2(0, 0) },
+                uvScale: { value: new THREE.Vector2(1, 1) }
+            };
+
+            const pFrag = `
+                uniform sampler2D playerTex;
+                uniform vec2 uvOffset;
+                uniform vec2 uvScale;
+                varying vec2 vUv;
+                void main() {
+                    vec2 finalUv = clamp(vUv, 0.02, 0.98) * uvScale + uvOffset;
+                    vec4 color = texture2D(playerTex, finalUv);
+                    if (color.a < 0.1) discard;
+                    if (!gl_FrontFacing) color.rgb *= 0.15;
+                    gl_FragColor = color;
+                }
+            `;
+
+            playerMat = new THREE.ShaderMaterial({
+                uniforms: pUniforms, vertexShader: getVertexProjectionCode(true), fragmentShader: pFrag,
+                side: THREE.DoubleSide, transparent: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1
+            });
+            playerMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 1.6, 4, 4), playerMat);
+            playerMesh.frustumCulled = false;
+            scene.add(playerMesh);
+
+            const pwMat = new THREE.ShaderMaterial({
+                uniforms: pUniforms, vertexShader: getVertexProjectionCode(true),
+                fragmentShader: pFrag.replace('gl_FragColor = color;', 'gl_FragColor = vec4(1.0, 0.0, 1.0, 0.8);'),
+                transparent: true, wireframe: true
+            });
+            playerWireMesh = new THREE.Mesh(playerMesh.geometry, pwMat);
+            playerWireMesh.frustumCulled = false;
+            scene.add(playerWireMesh);
+
+            runTests(tileGeo);
+        }
+
+        function initGame() {
+            scene.add(new THREE.AmbientLight(0xffffff));
+            rebuildLevel();
+            animate(performance.now());
+        }
+
+        function updatePhysics(dt) {
+            player.vx = (keys.ArrowRight ? 10 : 0) - (keys.ArrowLeft ? 10 : 0);
+            if (keys.ArrowUp && player.grounded) {
+                player.vy = 16;
+                player.grounded = false;
+            }
+            player.vy -= 40 * dt;
+
+            const tCenterX = getTileProps(getTile(Math.floor(player.x), Math.floor(player.y)));
+            const tCenterY = getTileProps(getTile(Math.floor(player.x), Math.floor(player.y + player.h/2)));
+
+            if (currentLevel < 3 && (tCenterX.door || tCenterY.door)) {
+                currentLevel++;
+                if (currentLevel === 2) {
+                    settings.mapW *= 3;
+                    settings.R = 60;
+                } else if (currentLevel === 3) {
+                    settings.shape = 1;
+                    settings.R = 30;
+                    settings.mapW = 40;
+                    settings.spiralPitch = 40;
+                }
+                updateTorus();
+                gui.updateDisplay();
+                player.x = 0;
+                player.y = 5;
+                rebuildLevel();
+                return;
+            }
+
+            player.x += player.vx * dt;
+            if (settings.shape === 0) player.x = (player.x + settings.mapW) % settings.mapW;
+            
+            let minX = Math.floor(player.x - player.w/2);
+            let maxX = Math.floor(player.x + player.w/2);
+            let minY = Math.floor(player.y);
+            let maxY = Math.floor(player.y + player.h - 0.1);
+
+            for (let y = minY; y <= maxY; y++) {
+                if (getTileProps(getTile(player.vx > 0 ? maxX : minX, y)).solid) {
+                    player.x = player.vx > 0 ? Math.floor(player.x + player.w/2) - player.w/2 - 0.01 : Math.floor(player.x - player.w/2) + 1 + player.w/2 + 0.01;
+                    player.vx = 0;
+                    break;
+                }
+            }
+
+            player.y += player.vy * dt;
+            player.y = (player.y % settings.mapH + settings.mapH) % settings.mapH;
+            
+            minX = Math.floor(player.x - player.w/2 + 0.1);
+            maxX = Math.floor(player.x + player.w/2 - 0.1);
+            minY = Math.floor(player.y);
+            maxY = Math.floor(player.y + player.h);
+
+            player.grounded = false;
+            for (let x = minX; x <= maxX; x++) {
+                const tileY = player.vy > 0 ? maxY : minY;
+                const p = getTileProps(getTile(x, tileY));
+                
+                if (p.solid) {
+                    if (player.vy > 0) {
+                        player.y = Math.floor(player.y + player.h) - player.h - 0.01;
+                    } else {
+                        player.y = Math.floor(player.y) + 1;
+                        player.grounded = true;
+                    }
+                    player.vy = 0;
+                    break;
+                } else if (p.spikes && player.vy < 0 && (player.y - player.vy * dt) >= tileY + 0.8) {
+                    player.x = 0;
+                    player.y = 5;
+                    player.vy = 0;
+                    break;
+                }
+            }
+            player.y = (player.y % settings.mapH + settings.mapH) % settings.mapH;
+
+            if (player.vx !== 0) player.dir = Math.sign(player.vx);
+            if (player.grounded) {
+                player.frame = player.vx !== 0 ? (player.frame + dt * 15) % 11 : 0;
+            } else {
+                player.frame = player.vy > 0 ? 1 : 2; 
+            }
+        }
+
+        function updatePlayerMesh() {
+            const basis = getBasis(player.x, player.y + player.h/2);
+            const grid = atlasData['p1_spritesheet.png'];
+            const f = Math.floor(player.frame);
+            let col = f % grid.cols;
+            let row = grid.rows - 1 - Math.floor(f / grid.cols);
+
+            playerMat.uniforms.mapOffset.value.set(player.x, player.y + player.h/2);
+            playerMat.uniforms.uvScale.value.set(player.dir * (1/grid.cols), 1/grid.rows);
+            playerMat.uniforms.uvOffset.value.set((player.dir === -1 ? col + 1 : col) / grid.cols, row / grid.rows);
+            
+            return basis;
+        }
+
+        let lastTime = performance.now();
+        function animate(time) {
+            requestAnimationFrame(animate);
+            const dt = Math.min((time - lastTime) / 1000, 0.1);
+            lastTime = time;
+
+            if (settings.shape === 1) {
+                const baseS = Math.floor(player.x / settings.mapW);
+                for (let i = 0; i < 3; i++) {
+                    tileMeshes[i].visible = true;
+                    tileWireMeshes[i].visible = settings.wireframe;
+                    tileMaterials[i].uniforms.mapOffset.value.set((baseS - 1 + i) * settings.mapW, 0);
+                    tileMaterials[i].uniforms.time.value = time / 1000.0;
+                }
+            } else {
+                tileMeshes[0].visible = true;
+                tileWireMeshes[0].visible = settings.wireframe;
+                tileMaterials[0].uniforms.mapOffset.value.set(0, 0);
+                tileMaterials[0].uniforms.time.value = time / 1000.0;
+                tileMeshes[1].visible = false;
+                tileWireMeshes[1].visible = false;
+                tileMeshes[2].visible = false;
+                tileWireMeshes[2].visible = false;
+            }
+
+            playerWireMesh.visible = settings.wireframe;
+
+            updatePhysics(dt);
+            const pBasis = updatePlayerMesh();
+
+            const aspect = window.innerWidth / window.innerHeight;
+            let activeCam = settings.proj === 'Perspective' ? perspCam : orthoCam;
+
+            if (settings.proj === 'Perspective') {
+                perspCam.fov = settings.fov;
+                perspCam.aspect = aspect;
+                perspCam.updateProjectionMatrix();
+            } else {
+                orthoCam.left = -aspect * settings.orthoSize;
+                orthoCam.right = aspect * settings.orthoSize;
+                orthoCam.top = settings.orthoSize;
+                orthoCam.bottom = -settings.orthoSize;
+                orthoCam.updateProjectionMatrix();
+            }
+
+            const basisMat = new THREE.Matrix4().makeBasis(pBasis.T, pBasis.N, pBasis.Z);
+            const basisQuat = new THREE.Quaternion().setFromRotationMatrix(basisMat);
+            const localRot = new THREE.Quaternion().setFromEuler(new THREE.Euler(-settings.rotX, settings.rotY, 0, 'YXZ'));
+            
+            const offset = new THREE.Vector3(0, 0, settings.dist).applyQuaternion(localRot).applyQuaternion(basisQuat);
+
+            activeCam.position.copy(pBasis.pos).add(offset);
+            activeCam.quaternion.copy(basisQuat).multiply(localRot);
+
+            renderer.render(scene, activeCam);
+        }
+
+        loadAssets();
+    </script>
+</body>
+</html>
