@@ -1,0 +1,2702 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4598847547599910152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: barnacle_attack_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4598847547599910152, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &4598850846134794785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: barnacle_attack_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4598850846134794785, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &3163105538119599947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: barnacle_attack_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 3163105538119599947, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8627720003332249005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: bee_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8627720003332249005, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8627718903820620794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: bee_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8627718903820620794, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2929013697273863794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: bee_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2929013697273863794, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2038406018881274938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: block_fall
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2038406018881274938, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6109936677297268139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: block_idle
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6109936677297268139, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &4454692444981479225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: block_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4454692444981479225, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6470934899346326647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_blue_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6470934899346326647, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1500399636009106827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_blue_swim_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1500399636009106827, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1500402934543991460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_blue_swim_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1500402934543991460, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &8237718581070697383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_purple_down
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 8237718581070697383, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2946152105809091981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_purple_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2946152105809091981, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6362087670700050814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_purple_up
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6362087670700050814, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &7596968224539828355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_yellow_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 7596968224539828355, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2579736690294388665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_yellow_swim_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2579736690294388665, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2579733391759504032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fish_yellow_swim_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2579733391759504032, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6872734553204241490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fly_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6872734553204241490, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6872733453692613279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fly_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6872733453692613279, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5318512542461316249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: fly_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5318512542461316249, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2124916352678813210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: frog_idle
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2124916352678813210, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6920746426584053652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: frog_jump
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6920746426584053652, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &9168025895935299030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: frog_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 9168025895935299030, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1749992334039910145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: ladybug_fly
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1749992334039910145, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2974317284930479884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: ladybug_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2974317284930479884, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8041225185884305733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: ladybug_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8041225185884305733, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8041224086372677522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: ladybug_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8041224086372677522, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8601646086768419821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: mouse_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8601646086768419821, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2016778987429673928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: mouse_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2016778987429673928, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2016775688894789295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: mouse_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2016775688894789295, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &9082933673311675178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: saw_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 9082933673311675178, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &9082932573800046967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: saw_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 9082932573800046967, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6576096655372007265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: saw_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6576096655372007265, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &687845584161586486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_block_jump
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 687845584161586486, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2900521223556587372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_block_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2900521223556587372, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1219112879074982565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_block_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1219112879074982565, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1219111779563354354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_block_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1219111779563354354, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2280175991281050738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_fire_flat
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2280175991281050738, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &973566565599890303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_fire_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 973566565599890303, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4977586682186271764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_fire_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4977586682186271764, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4977583383651387131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_fire_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4977583383651387131, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4423916375024757761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_normal_flat
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4423916375024757761, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4670784940635121666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_normal_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4670784940635121666, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6513577706585552175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_normal_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6513577706585552175, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6513581005120436808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_normal_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6513581005120436808, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1553524176776660560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_spike_flat
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1553524176776660560, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2863783981062724615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_spike_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2863783981062724615, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5468254489633127858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_spike_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5468254489633127858, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5468253390121499647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: slime_spike_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5468253390121499647, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &3147918221533644801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: snail_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 3147918221533644801, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &6304257849122366883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: snail_shell
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6304257849122366883, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &3899482477898510666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: snail_walk_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 3899482477898510666, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &3899481378386882455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: snail_walk_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 3899481378386882455, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6760735766596689112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_normal_move_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6760735766596689112, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6760732468061804479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_normal_move_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6760732468061804479, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-346295387530907041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_normal_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -346295387530907041, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-5857170232317772605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_ring_move_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -5857170232317772605, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-5857169132806144394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_ring_move_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -5857169132806144394, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5225661046808437840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: worm_ring_rest
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5225661046808437840, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0

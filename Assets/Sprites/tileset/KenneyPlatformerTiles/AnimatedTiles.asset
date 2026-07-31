@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: flag_blue_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -8751463980842381216, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: -8751460682307496583, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: -8751463980842381216, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: -8751460682307496583, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
@@ -33,8 +33,8 @@ MonoBehaviour:
   m_Name: flag_green_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -177245833210487321, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: -177244733698859110, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: -177245833210487321, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: -177244733698859110, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Name: flag_red_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -9179239698904593581, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: -9179238599392965370, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: -9179239698904593581, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: -9179238599392965370, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Name: flag_yellow_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 7165368804795057044, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: 7165372103329941677, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: 7165368804795057044, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: 7165372103329941677, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: lab_light_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -3509603687387356969, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: -3509602587875728758, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: -3509603687387356969, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: -3509602587875728758, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: torch_on_anim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 5383373185141391615, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
-  - {fileID: 5383374284653019826, guid: aed74b7b388c27aab20c8ecd182dc2f4, type: 3}
+  - {fileID: 5383373185141391615, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
+  - {fileID: 5383374284653019826, guid: 2ca2ca1aff5a48e5ecb87d08c40c5c6b, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0

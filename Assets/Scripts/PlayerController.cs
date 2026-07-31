@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool rotatePlayerToGravity = true;
     [Tooltip("0 = snap instantly, higher = smooth toward mouse direction")]
     [SerializeField] float gravityTurnSpeed = 0f;
+    [SerializeField] bool useMouseGravityDir = false;
 
     public Vector2 gravityDir = Vector2.down;
     // Privates
@@ -64,18 +65,28 @@ public class PlayerController : MonoBehaviour
         UpdateGravityDirection();
     }
 
-    void UpdateGravityDirection()
-    {
+    Vector2 GetMouseGravityDir()
+    { 
         Camera cam = Camera.main;
-        if (cam == null) return;
+        if (cam == null) return gravityDir;
 
         Vector2 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 centerWorld = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
 
         Vector2 dir = mouseWorld - centerWorld;
-        if (dir.sqrMagnitude < 0.0001f) return; 
+        if (dir.sqrMagnitude < 0.0001f) return gravityDir;
 
         Vector2 targetDir = dir.normalized;
+        return targetDir;
+    }
+
+    void UpdateGravityDirection()
+    {
+        Vector2 targetDir = gravityDir;
+        if (useMouseGravityDir)
+        {
+            targetDir = GetMouseGravityDir();
+        }
 
         if (gravityTurnSpeed <= 0f)
         {

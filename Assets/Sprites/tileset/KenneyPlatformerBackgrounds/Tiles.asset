@@ -1,0 +1,632 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5647796313292686048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_clouds
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5647796313292686048, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &78455388586655811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_color_desert
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 78455388586655811, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &9170601495945558162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_color_hills
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 9170601495945558162, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-1406325701926494499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_color_mushrooms
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1406325701926494499, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &1596696649982328375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_color_trees
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 1596696649982328375, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5970727359789706452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_fade_desert
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5970727359789706452, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2154098908555936259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_fade_hills
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2154098908555936259, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4828729826036982716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_fade_mushrooms
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4828729826036982716, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &1660974164581585466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_fade_trees
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 1660974164581585466, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-4657199593981325833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_solid_cloud
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -4657199593981325833, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-5864680836661670425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_solid_dirt
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -5864680836661670425, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &987009793610323664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_solid_grass
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 987009793610323664, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2225870911312134732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_solid_sand
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2225870911312134732, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-6574351937462888493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: background_solid_sky
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -6574351937462888493, guid: aa298b0dfe47fe94d52b4b8760424bee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: background
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0

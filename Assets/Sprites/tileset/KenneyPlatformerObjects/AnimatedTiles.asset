@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7043060936960143787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: energy_ball_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -504718629293917949, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  - {fileID: -504717529782289738, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  - {fileID: -504716430270661527, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-8632277714895396462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: platform_lab_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -5328600843215848882, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  - {fileID: -5328601942727477093, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1
+--- !u!114 &2191879481154625110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: voidmonster_idle_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 4435753010434194762, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  - {fileID: 4435751910922566551, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &6192313543307927823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: voidmonster_run_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 8225786426405892021, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  - {fileID: 8225783127871007388, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

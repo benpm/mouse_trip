@@ -1,0 +1,812 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-504718629293917949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: energy_ball_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -504718629293917949, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: hazard
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-504717529782289738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: energy_ball_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -504717529782289738, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: hazard
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-504716430270661527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: energy_ball_c
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -504716430270661527, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: hazard
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8201107579014320642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: gear_large
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8201107579014320642, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: decoration
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &2504236673652072444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: gear_medium
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2504236673652072444, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: decoration
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-3988933738114894046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: gear_small
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -3988933738114894046, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: decoration
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &4452171178779021548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: key
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4452171178779021548, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: pickup
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 1
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-863685468732185913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: particle_accelerator
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -863685468732185913, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: interactive
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 1
+  liquid: 0
+--- !u!114 &-5328600843215848882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: platform_lab_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -5328600843215848882, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 1
+  category: oneway
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 1
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-5328601942727477093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: platform_lab_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -5328601942727477093, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 1
+  category: oneway
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 1
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-2483352871579735717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: spiky_ball
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -2483352871579735717, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: hazard
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &5759146415590515204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: vending_machine
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 5759146415590515204, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: interactive
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 1
+  liquid: 0
+--- !u!114 &4435753010434194762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: voidmonster_idle_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4435753010434194762, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &4435751910922566551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: voidmonster_idle_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 4435751910922566551, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-7835946731668861308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: voidmonster_jump
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -7835946731668861308, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &8225786426405892021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: voidmonster_run_a
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 8225786426405892021, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &8225783127871007388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: voidmonster_run_b
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 8225783127871007388, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: enemy
+  solid: 0
+  damagesPlayer: 1
+  damage: 1
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 0
+  liquid: 0
+--- !u!114 &-8142848939411158989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e62cdfba839d1a81a933b9c73cefbc, type: 3}
+  m_Name: water_cooler
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -8142848939411158989, guid: b91f43fab440465f1cc032a4ddf1d461, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 0
+  category: interactive
+  solid: 0
+  damagesPlayer: 0
+  damage: 0
+  collectible: 0
+  climbable: 0
+  oneWay: 0
+  bouncy: 0
+  breakable: 0
+  interactive: 1
+  liquid: 0

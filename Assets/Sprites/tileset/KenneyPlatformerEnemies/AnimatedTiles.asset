@@ -1,0 +1,302 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6876481877656792380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: barnacle_attack_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 4598847547599910152, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 4598850846134794785, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &9004407598528509445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: bee_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -8627720003332249005, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -8627718903820620794, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &4705583426362578639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: fish_blue_swim_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -1500399636009106827, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -1500402934543991460, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &2044724880108688635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: fish_yellow_swim_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 2579736690294388665, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 2579733391759504032, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &7749703739424016350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: fly_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 6872734553204241490, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 6872733453692613279, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-5542753531434694931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: ladybug_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -8041225185884305733, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -8041224086372677522, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &3800282310048402068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: mouse_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -2016778987429673928, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -2016775688894789295, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-902742391507546954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: saw_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 9082933673311675178, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 9082932573800046967, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &7452938281815597837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: slime_block_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -1219112879074982565, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -1219111779563354354, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-5865312493424855120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: slime_fire_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -4977586682186271764, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -4977583383651387131, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-1971676972840276813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: slime_normal_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -6513577706585552175, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -6513581005120436808, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &835287130805775550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: slime_spike_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 5468254489633127858, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 5468253390121499647, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-602504703076017578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: snail_walk_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 3899482477898510666, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: 3899481378386882455, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &-5307845427421740956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: worm_normal_move_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -6760735766596689112, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -6760732468061804479, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+--- !u!114 &6312805450709584917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: worm_ring_move_anim
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -5857170232317772605, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  - {fileID: -5857169132806144394, guid: 9332bc5f29ed60342c8aac895fd79db6, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
