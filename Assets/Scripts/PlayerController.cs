@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Jump buffer — pressed just before landing
+        // Jump buffer - pressed just before landing
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferTimer = jumpBufferTime;
