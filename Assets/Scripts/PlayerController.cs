@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -129,27 +130,40 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(Up.y, Up.x) * Mathf.Rad2Deg - 90f;
             rb.rotation = angle;
         }
-
-        // at the very end of FixedUpdate, after rb.linearVelocity = velocity;
-        Debug.Log($"WROTE {velocity}  |  READ-BACK next frame: {rb.linearVelocity}");
     }
 
     void CheckContacts(ref float vAlong)
     {
         ContactPoint2D[] contacts = new ContactPoint2D[8];
-        var filter = new ContactFilter2D();
-        filter.SetLayerMask(groundLayer);
-        filter.useLayerMask = true;
-        int count = rb.GetContacts(filter, contacts);
+        //var filter = new ContactFilter2D();
+        //filter.SetLayerMask(groundLayer);
+        //filter.useLayerMask = true;
+        int count = rb.GetContacts(contacts);
 
         bool groundContact = false;
         bool wallLeft = false, wallRight = false;
 
         for (int i = 0; i < count; i++)
         {
+            ContactPoint2D contact = contacts[i];
             Vector2 normal = contacts[i].normal;
             float upDot = Vector2.Dot(normal, Up);
             float sideDot = Vector2.Dot(normal, RightAxis);
+            // Nudge the hit point slightly inside the tile using the hit normal
+            Vector3 hitPosition = contact.point - (contact.normal * 0.01f);
+            Tilemap tilemap = contact.collider.GetComponent<Tilemap>();
+
+            // 3. Convert the world position to Tilemap cell coordinates
+            Vector3Int cellPosition = tilemap.WorldToCell(hitPosition);
+
+            // 4. Get the specific tile asset
+            GameplayTile tile = tilemap.GetTile(cellPosition) as GameplayTile;
+
+            if (tile.damagesPlayer)
+            {
+                ///TODO: Player takes damage
+                Debug.Log($"Player took {tile.damage} damage from tile at {cellPosition}");
+            }
 
             if (upDot > 0.5f)
             {
