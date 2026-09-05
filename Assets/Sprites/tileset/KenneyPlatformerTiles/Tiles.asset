@@ -3003,7 +3003,7 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 0
+  m_ColliderType: 2
   category: interactive
   solid: 0
   damagesPlayer: 0
@@ -10248,7 +10248,7 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 0
+  m_ColliderType: 2
   category: hazard
   solid: 1
   damagesPlayer: 1
