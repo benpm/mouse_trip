@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
             // 4. Get the specific tile asset
             GameplayTile tile = tilemap.GetTile(cellPosition) as GameplayTile;
 
-            if (tile.damagesPlayer)
+            if (tile && tile.damagesPlayer)
             {
                 ///TODO: Player takes damage
                 Debug.Log($"Player took {tile.damage} damage from tile at {cellPosition}");

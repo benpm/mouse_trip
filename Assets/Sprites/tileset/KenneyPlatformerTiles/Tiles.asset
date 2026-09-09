@@ -5758,7 +5758,7 @@ MonoBehaviour:
   oneWay: 0
   bouncy: 0
   breakable: 0
-  interactive: 0
+  interactive: 1
   liquid: 0
 --- !u!114 &-3341984711351740425
 MonoBehaviour:
@@ -7819,7 +7819,7 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 0
-  category: interactive
+  category: decoration
   solid: 0
   damagesPlayer: 0
   damage: 0
@@ -10248,7 +10248,7 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 0
+  m_ColliderType: 2
   category: hazard
   solid: 1
   damagesPlayer: 1

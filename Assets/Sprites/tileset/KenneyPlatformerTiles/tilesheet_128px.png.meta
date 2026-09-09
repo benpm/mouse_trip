@@ -1027,7 +1027,7 @@ TextureImporter:
   maxTextureSize: 8192
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1046,7 +1046,9 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationMethod: 0
   spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -1062,6 +1064,45 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -8372,26 +8413,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      terrain_sand_block_top_left: 366192813737022869
-      terrain_sand_block_top: -1633407485204648349
-      terrain_sand_block_top_right: 676104700567466862
-      terrain_sand_block: -6541898216862166457
-      terrain_sand_vertical_top: 6367500389689671212
-      lab_block: -8245409871918427450
-      lab_block_vent: -3430109035063575500
-      lab_block_screen: -2935100799801629049
-      lab_block_warning: -1456072922344629859
-      lab_glass: 4537707955280421167
-      lab_door_closed: -1501011344135858126
-      lab_pipe: 8317347045778670861
-      lab_acid: -5816020072001555092
-      lab_flask: -1643565203853371260
-      lab_tube: -6065382018965072925
-      lab_energy_cell: -2007689218740384934
-      terrain_sand_block_left: 7353324747536141913
-      terrain_sand_block_center: -1331651062418747247
-      terrain_sand_block_right: -3633525987674300422
-      terrain_sand_vertical_middle: 2874470420667684616
       block_blue: 6433755637479005603
       block_coin: -256502167986116486
       block_coin_active: -8789032664655797823
@@ -8400,6 +8421,8 @@ TextureImporter:
       block_exclamation: -249872056278042536
       block_exclamation_active: -9116055696533241553
       block_green: -7728122831581055394
+      block_outline_yellow: 1342391282852475316
+      block_outline_yellow_solid: -7141959861903548352
       block_plank: 3885593384542884209
       block_planks: -1584326468218608026
       block_red: -6920177513110045906
@@ -8413,98 +8436,33 @@ TextureImporter:
       block_strong_exclamation: -3552669106848808738
       block_strong_exclamation_active: -8304460595118866531
       block_yellow: 67958842230315875
+      bomb: -3659501682649844015
+      bomb_active: 1965642660564690044
       brick_brown: 657353935602186497
       brick_brown_diagonal: 2075627820536101301
       brick_grey: -2693717442488092232
       brick_grey_diagonal: 7230549567171959226
       bricks_brown: -6328250048181033416
       bricks_grey: -7316753649760039417
-      block_outline_yellow: 1342391282852475316
-      block_outline_yellow_solid: -7141959861903548352
-      terrain_sand_block_bottom_left: -1676821488368178563
-      terrain_sand_block_bottom: 6630523632612668379
-      terrain_sand_block_bottom_right: 4179725068858712374
-      terrain_sand_horizontal_left: 5804461980293712090
-      terrain_sand_horizontal_middle: 5998562443858731102
-      terrain_sand_horizontal_right: 5018837861726568391
-      terrain_sand_horizontal_overhang_left: 4867952258666713675
-      terrain_sand_horizontal_overhang_right: 8519550260148325844
-      terrain_sand_vertical_bottom: -1064634290332041446
-      bomb: -3659501682649844015
-      bomb_active: 1965642660564690044
-      fireball: 4555051231537806328
-      lava: 307909081204128699
-      lava_top: 7693564691822946447
-      lava_top_low: -3723872697373787646
-      saw: -9066423240127812182
-      spikes: 1477989863193918258
-      water: -3185508057913901456
-      water_top: -5388927068548403404
-      water_top_low: -5379719602587120419
-      weight: 7571106081475641113
-      door_closed: 140494370718661710
-      door_closed_top: -3386214243917370662
-      door_open: -6075204644140219030
-      door_open_top: 3327727409232379822
-      ladder_bottom: 709285298646071569
-      ladder_middle: -1876015948989245721
-      ladder_top: 3063730927953399589
-      window: 8210911950352161981
-      terrain_sand_ramp_long_a: -1265980355359650619
-      terrain_sand_ramp_long_b: -1265983653894535252
-      terrain_sand_ramp_long_c: -1265982554382907041
-      terrain_sand_ramp_short_a: -1092015481782852641
-      terrain_sand_ramp_short_b: -1092014382271224430
+      bridge: -7143775295176309872
+      bridge_logs: -4463426054977755682
+      bush: -38875862611868925
+      cactus: 8065041772106693638
       chain: -6394108208178646954
-      conveyor: -5123599129090428452
-      lever: -1666953040604924925
-      lever_left: 1420808409714555381
-      lever_right: -4912952407100936370
-      rop_attached: -5621172381042546565
-      rope: -6649533926298019379
-      spring: 814440220876705804
-      spring_out: -6479255847812862653
-      switch_blue: 5157242137057803850
-      switch_blue_pressed: -2870310385331330937
-      switch_green: -7427386730955982003
-      switch_green_pressed: 180067648309915356
-      switch_red: -7192596834368707127
-      switch_red_pressed: 3397308868604819768
-      switch_yellow: 1176051745095141082
-      switch_yellow_pressed: -5519789203857007625
-      torch_off: -570148242742732777
-      torch_on_a: 5383373185141391615
-      torch_on_b: 5383374284653019826
-      terrain_sand_cloud: -7529171625046510729
-      terrain_sand_cloud_left: -3915872472526624599
-      terrain_sand_cloud_middle: 7842592842147150445
-      terrain_sand_cloud_right: 5784134037096473482
-      terrain_sand_cloud_background: -5997323185704307316
-      key_blue: 4226777762916254665
-      key_green: -2930694894390017272
-      key_red: -5739712096374074952
-      key_yellow: -8143961357004658347
-      lock_blue: -8102993186947921373
-      lock_green: -4796780869890632738
-      lock_red: -3559331612428378962
-      lock_yellow: -2154953820971385885
       coin_bronze: -4763386240883901779
       coin_bronze_side: -478120152915327851
       coin_gold: -736409987274819593
       coin_gold_side: -6651588717431623085
       coin_silver: -130569293062403556
       coin_silver_side: -3649173955491860174
-      gem_blue: 2349273670330381145
-      gem_green: -1776531007360356808
-      gem_red: 2406754521787952424
-      gem_yellow: 8373628027734778437
-      heart: -8428657923866607357
-      star: -5837412677108506479
-      terrain_stone_block_top_left: -1050114712734978422
-      terrain_stone_block_top: -6846506503466362690
-      terrain_stone_block_top_right: -4938445976469235337
-      terrain_stone_block: -195596303125207462
-      terrain_stone_vertical_top: 7412378950120669959
+      conveyor: -5123599129090428452
+      door_closed: 140494370718661710
+      door_closed_top: -3386214243917370662
+      door_open: -6075204644140219030
+      door_open_top: 3327727409232379822
+      fence: 3938794661856788342
+      fence_broken: -1685713116452251014
+      fireball: 4555051231537806328
       flag_blue_a: -8751463980842381216
       flag_blue_b: -8751460682307496583
       flag_green_a: -177245833210487321
@@ -8514,39 +8472,16 @@ TextureImporter:
       flag_red_b: -9179238599392965370
       flag_yellow_a: 7165368804795057044
       flag_yellow_b: 7165372103329941677
-      sign: 5624854204527387492
-      sign_exit: 583534530149784673
-      sign_left: -2058852184990618964
-      sign_right: -1037030732809360871
-      terrain_stone_block_left: -8699002447955717642
-      terrain_stone_block_center: -3610826382458770510
-      terrain_stone_block_right: -1844385496216964021
-      terrain_stone_vertical_middle: -5520088902575446655
-      bridge: -7143775295176309872
-      bridge_logs: -4463426054977755682
-      bush: -38875862611868925
-      cactus: 8065041772106693638
-      fence: 3938794661856788342
-      fence_broken: -1685713116452251014
+      gem_blue: 2349273670330381145
+      gem_green: -1776531007360356808
+      gem_red: 2406754521787952424
+      gem_yellow: 8373628027734778437
       grass: 3666652653925298717
       grass_purple: 1443971765999471572
+      heart: -8428657923866607357
       hill: 8307145478158653482
       hill_top: 7569305293490869870
       hill_top_smile: 7896118197980572597
-      mushroom_brown: -2165438497805031548
-      mushroom_red: 7776454160554081471
-      ramp: 7903820781235786025
-      rock: -6665866072020248748
-      snow: 6373351143289313586
-      terrain_stone_block_bottom_left: -1856168355375529624
-      terrain_stone_block_bottom: -8382190470262277504
-      terrain_stone_block_bottom_right: -3801485917126785187
-      terrain_stone_horizontal_left: -8549051270112951609
-      terrain_stone_horizontal_middle: -4356754366832040097
-      terrain_stone_horizontal_right: -2464415168277690120
-      terrain_stone_horizontal_overhang_left: -1049221347951135288
-      terrain_stone_horizontal_overhang_right: 4973806655951384893
-      terrain_stone_vertical_bottom: 4607175376436590575
       hud_character_0: -3809569164173452195
       hud_character_1: -3809570263685080406
       hud_character_2: -3809571363196708617
@@ -8577,132 +8512,238 @@ TextureImporter:
       hud_player_pink: -6023095465219355433
       hud_player_purple: -3029146869258229019
       hud_player_yellow: -5630760611702774453
-      lab_window: 6671016891081488977
-      lab_window_round: -2015632716900515078
-      lab_pipe_vertical: 5973892918906070268
-      lab_pipe_bend: 2611607968158632529
-      lab_pipe_tee: 8082345501540488212
-      lab_pipe_valve: -8488037190077000500
-      lab_vent: 8484128869361447898
+      key_blue: 4226777762916254665
+      key_green: -2930694894390017272
+      key_red: -5739712096374074952
+      key_yellow: -8143961357004658347
+      lab_acid: -5816020072001555092
+      lab_bg_beaker: -2781285321180820531
+      lab_bg_belljar: 5725856336710307351
+      lab_bg_caution: 4792678608820087904
+      lab_bg_condenser: 7477267297373731070
+      lab_bg_flask: 8694554909692266290
+      lab_bg_gear_large: 3424832718417353148
+      lab_bg_gears: -2430733329568456791
+      lab_bg_gears_triple: 1234050776624374886
+      lab_bg_girder: -5008631787243441194
+      lab_bg_hole: -678294697198347799
+      lab_bg_machine: 2200503341723323068
+      lab_bg_monitors: 3835234794905046500
+      lab_bg_pipes: 6209032551025366512
+      lab_bg_plate: 7241054930964069561
+      lab_bg_plate_hatch: 4515498905851282512
+      lab_bg_plate_tread: 1246825723547364410
+      lab_bg_plate_vent: -7798201237949047343
+      lab_bg_reactor: 736887835156173039
+      lab_bg_server: -6878550713539049276
+      lab_bg_tank: 4978407470355250611
+      lab_bg_vials: -8438329483496938792
+      lab_bg_wall: -6934859392715088757
+      lab_bg_wall_cracked: 3453320847147834523
+      lab_bg_wall_dirty: 8220990105867496116
+      lab_bg_wall_striped: -761755864262573181
+      lab_bg_window: -1718485305600281905
+      lab_block: -8245409871918427450
+      lab_block_screen: -2935100799801629049
+      lab_block_vent: -3430109035063575500
+      lab_block_warning: -1456072922344629859
+      lab_button: -799934452928069307
+      lab_door_closed: -1501011344135858126
+      lab_energy_cell: -2007689218740384934
+      lab_flask: -1643565203853371260
+      lab_gauge: -7970853498317217228
+      lab_glass: 4537707955280421167
       lab_grate: -6029999488537499152
       lab_light_a: -3509603687387356969
       lab_light_b: -3509602587875728758
       lab_light_off: 2862844532240122449
       lab_panel: 2140963107753754529
-      lab_gauge: -7970853498317217228
-      lab_button: -799934452928069307
-      lab_window_pane: 1338853460981704420
+      lab_pipe: 8317347045778670861
+      lab_pipe_bend: 2611607968158632529
+      lab_pipe_tee: 8082345501540488212
+      lab_pipe_valve: -8488037190077000500
+      lab_pipe_vertical: 5973892918906070268
       lab_platform_left: 276592419724558066
       lab_platform_mid: 108711920456178975
       lab_platform_right: -3970109018068510401
-      terrain_stone_ramp_long_a: 6127702786183066272
-      terrain_stone_ramp_long_b: 6127706084717950905
-      terrain_stone_ramp_long_c: 6127704985206322694
-      terrain_stone_ramp_short_a: 7022039270387563464
-      terrain_stone_ramp_short_b: 7022042568922448097
-      lab_bg_wall: -6934859392715088757
-      lab_bg_wall_dirty: 8220990105867496116
-      lab_bg_wall_cracked: 3453320847147834523
-      lab_bg_wall_striped: -761755864262573181
-      lab_bg_caution: 4792678608820087904
-      lab_bg_hole: -678294697198347799
-      lab_bg_girder: -5008631787243441194
-      lab_bg_window: -1718485305600281905
-      lab_bg_server: -6878550713539049276
-      lab_bg_monitors: 3835234794905046500
-      lab_bg_reactor: 736887835156173039
-      lab_bg_machine: 2200503341723323068
-      lab_bg_tank: 4978407470355250611
-      lab_bg_pipes: 6209032551025366512
-      lab_bg_plate: 7241054930964069561
-      lab_bg_plate_tread: 1246825723547364410
-      lab_bg_plate_vent: -7798201237949047343
-      lab_bg_plate_hatch: 4515498905851282512
-      lab_bg_gears: -2430733329568456791
-      lab_bg_gear_large: 3424832718417353148
-      lab_bg_gears_triple: 1234050776624374886
-      lab_bg_beaker: -2781285321180820531
-      lab_bg_flask: 8694554909692266290
-      lab_bg_vials: -8438329483496938792
-      lab_bg_condenser: 7477267297373731070
-      lab_bg_belljar: 5725856336710307351
-      terrain_stone_cloud: -88043985467117274
-      terrain_stone_cloud_left: -6755696623570960798
-      terrain_stone_cloud_middle: 879835790308262310
-      terrain_stone_cloud_right: -2043475345146820113
-      terrain_stone_cloud_background: -5524864719403805305
-      terrain_lab_block_top_left: -8274596712428308588
-      terrain_lab_block_top: 4226989613880858140
-      terrain_lab_block_top_right: -1577088253738729439
-      terrain_lab_block: -1695545004476922440
-      terrain_lab_vertical_top: 4423170936431264613
-      terrain_lab_block_left: -7264473243629563376
-      terrain_lab_block_center: 4378771314137404708
-      terrain_lab_block_right: -1708636998816639771
-      terrain_lab_vertical_middle: -8505266537639965145
-      terrain_lab_block_bottom_left: -8476914891959145498
-      terrain_lab_block_bottom: 5960445026079430506
-      terrain_lab_block_bottom_right: -6867996826769560517
-      terrain_lab_horizontal_left: 5727168905778662393
-      terrain_lab_horizontal_middle: 4121667043607861021
-      terrain_lab_horizontal_right: 1385628906959576346
-      terrain_lab_vertical_bottom: 314705423064397905
-      terrain_concrete_block_top_left: 7108217701746269018
-      terrain_concrete_block_top: -8830591946007675986
-      terrain_concrete_block_top_right: 1461639200268726087
+      lab_tube: -6065382018965072925
+      lab_vent: 8484128869361447898
+      lab_window: 6671016891081488977
+      lab_window_pane: 1338853460981704420
+      lab_window_round: -2015632716900515078
+      ladder_bottom: 709285298646071569
+      ladder_middle: -1876015948989245721
+      ladder_top: 3063730927953399589
+      lava: 307909081204128699
+      lava_top: 7693564691822946447
+      lava_top_low: -3723872697373787646
+      lever: -1666953040604924925
+      lever_left: 1420808409714555381
+      lever_right: -4912952407100936370
+      lock_blue: -8102993186947921373
+      lock_green: -4796780869890632738
+      lock_red: -3559331612428378962
+      lock_yellow: -2154953820971385885
+      mushroom_brown: -2165438497805031548
+      mushroom_red: 7776454160554081471
+      ramp: 7903820781235786025
+      rock: -6665866072020248748
+      rop_attached: -5621172381042546565
+      rope: -6649533926298019379
+      saw: -9066423240127812182
+      sign: 5624854204527387492
+      sign_exit: 583534530149784673
+      sign_left: -2058852184990618964
+      sign_right: -1037030732809360871
+      snow: 6373351143289313586
+      spikes: 1477989863193918258
+      spring: 814440220876705804
+      spring_out: -6479255847812862653
+      star: -5837412677108506479
+      switch_blue: 5157242137057803850
+      switch_blue_pressed: -2870310385331330937
+      switch_green: -7427386730955982003
+      switch_green_pressed: 180067648309915356
+      switch_red: -7192596834368707127
+      switch_red_pressed: 3397308868604819768
+      switch_yellow: 1176051745095141082
+      switch_yellow_pressed: -5519789203857007625
       terrain_concrete_block: -3647600341987409558
-      terrain_concrete_vertical_top: 8519527456556316535
-      terrain_concrete_block_left: 918786279628859878
-      terrain_concrete_block_center: -4325065956589562238
-      terrain_concrete_block_right: 7674321231429305915
-      terrain_concrete_vertical_middle: -1740191584870451695
-      terrain_concrete_block_bottom_left: 857603870057170840
       terrain_concrete_block_bottom: -3604582669761592944
+      terrain_concrete_block_bottom_left: 857603870057170840
       terrain_concrete_block_bottom_right: -6992807242171300019
+      terrain_concrete_block_center: -4325065956589562238
+      terrain_concrete_block_left: 918786279628859878
+      terrain_concrete_block_right: 7674321231429305915
+      terrain_concrete_block_top: -8830591946007675986
+      terrain_concrete_block_top_left: 7108217701746269018
+      terrain_concrete_block_top_right: 1461639200268726087
+      terrain_concrete_cloud: -6082763689659254826
+      terrain_concrete_cloud_background: -149641326478076681
+      terrain_concrete_cloud_left: -5621926212616706446
+      terrain_concrete_cloud_middle: 923978939551715798
+      terrain_concrete_cloud_right: -637109199636908097
       terrain_concrete_horizontal_left: -3341984711351740425
       terrain_concrete_horizontal_middle: -8883418023576955345
-      terrain_concrete_horizontal_right: 674622128195472360
       terrain_concrete_horizontal_overhang_left: 5680839128519345144
       terrain_concrete_horizontal_overhang_right: 2523935546510104621
-      terrain_concrete_vertical_bottom: 774374136685682303
+      terrain_concrete_horizontal_right: 674622128195472360
       terrain_concrete_ramp_long_a: -8806590913321600400
       terrain_concrete_ramp_long_b: -8806587614786715767
       terrain_concrete_ramp_long_c: -8806588714298343978
       terrain_concrete_ramp_short_a: -3616838452876548712
       terrain_concrete_ramp_short_b: -3616835154341664079
-      terrain_concrete_cloud: -6082763689659254826
-      terrain_concrete_cloud_left: -5621926212616706446
-      terrain_concrete_cloud_middle: 923978939551715798
-      terrain_concrete_cloud_right: -637109199636908097
-      terrain_concrete_cloud_background: -149641326478076681
-      terrain_lead_pipe_block_top_left: 2866538650380688852
-      terrain_lead_pipe_block_top: -4166262419394518180
-      terrain_lead_pipe_block_top_right: 1348728845841879137
+      terrain_concrete_vertical_bottom: 774374136685682303
+      terrain_concrete_vertical_middle: -1740191584870451695
+      terrain_concrete_vertical_top: 8519527456556316535
+      terrain_lab_block: -1695545004476922440
+      terrain_lab_block_bottom: 5960445026079430506
+      terrain_lab_block_bottom_left: -8476914891959145498
+      terrain_lab_block_bottom_right: -6867996826769560517
+      terrain_lab_block_center: 4378771314137404708
+      terrain_lab_block_left: -7264473243629563376
+      terrain_lab_block_right: -1708636998816639771
+      terrain_lab_block_top: 4226989613880858140
+      terrain_lab_block_top_left: -8274596712428308588
+      terrain_lab_block_top_right: -1577088253738729439
+      terrain_lab_horizontal_left: 5727168905778662393
+      terrain_lab_horizontal_middle: 4121667043607861021
+      terrain_lab_horizontal_right: 1385628906959576346
+      terrain_lab_vertical_bottom: 314705423064397905
+      terrain_lab_vertical_middle: -8505266537639965145
+      terrain_lab_vertical_top: 4423170936431264613
       terrain_lead_pipe_block: 3276588164000967416
-      terrain_lead_pipe_vertical_top: -3402431239395402587
-      terrain_lead_pipe_block_left: -6401054102929685680
-      terrain_lead_pipe_block_center: -4923792319732250012
-      terrain_lead_pipe_block_right: -649742540909353947
-      terrain_lead_pipe_vertical_middle: -808198166379521177
-      terrain_lead_pipe_block_bottom_left: 5852356654749763622
       terrain_lead_pipe_block_bottom: 9120974505878695338
+      terrain_lead_pipe_block_bottom_left: 5852356654749763622
       terrain_lead_pipe_block_bottom_right: 3833783443770205307
+      terrain_lead_pipe_block_center: -4923792319732250012
+      terrain_lead_pipe_block_left: -6401054102929685680
+      terrain_lead_pipe_block_right: -649742540909353947
+      terrain_lead_pipe_block_top: -4166262419394518180
+      terrain_lead_pipe_block_top_left: 2866538650380688852
+      terrain_lead_pipe_block_top_right: 1348728845841879137
+      terrain_lead_pipe_cloud: -7956079893665158284
+      terrain_lead_pipe_cloud_background: -7235169500096546351
+      terrain_lead_pipe_cloud_left: -6083330341370784228
+      terrain_lead_pipe_cloud_middle: 1152011517689886300
+      terrain_lead_pipe_cloud_right: 7862315034849301449
       terrain_lead_pipe_horizontal_left: 543184474655739705
       terrain_lead_pipe_horizontal_middle: 5306340436458165341
-      terrain_lead_pipe_horizontal_right: -7382506948479856806
       terrain_lead_pipe_horizontal_overhang_left: -4034867424266117802
       terrain_lead_pipe_horizontal_overhang_right: -5121631813805967061
-      terrain_lead_pipe_vertical_bottom: 1777103081255796113
+      terrain_lead_pipe_horizontal_right: -7382506948479856806
       terrain_lead_pipe_ramp_long_a: -8971252563150649370
       terrain_lead_pipe_ramp_long_b: -8971253662662277581
       terrain_lead_pipe_ramp_long_c: -8971254762173905792
       terrain_lead_pipe_ramp_short_a: 4016667696336757458
       terrain_lead_pipe_ramp_short_b: 4016666596825129247
-      terrain_lead_pipe_cloud: -7956079893665158284
-      terrain_lead_pipe_cloud_left: -6083330341370784228
-      terrain_lead_pipe_cloud_middle: 1152011517689886300
-      terrain_lead_pipe_cloud_right: 7862315034849301449
-      terrain_lead_pipe_cloud_background: -7235169500096546351
+      terrain_lead_pipe_vertical_bottom: 1777103081255796113
+      terrain_lead_pipe_vertical_middle: -808198166379521177
+      terrain_lead_pipe_vertical_top: -3402431239395402587
+      terrain_sand_block: -6541898216862166457
+      terrain_sand_block_bottom: 6630523632612668379
+      terrain_sand_block_bottom_left: -1676821488368178563
+      terrain_sand_block_bottom_right: 4179725068858712374
+      terrain_sand_block_center: -1331651062418747247
+      terrain_sand_block_left: 7353324747536141913
+      terrain_sand_block_right: -3633525987674300422
+      terrain_sand_block_top: -1633407485204648349
+      terrain_sand_block_top_left: 366192813737022869
+      terrain_sand_block_top_right: 676104700567466862
+      terrain_sand_cloud: -7529171625046510729
+      terrain_sand_cloud_background: -5997323185704307316
+      terrain_sand_cloud_left: -3915872472526624599
+      terrain_sand_cloud_middle: 7842592842147150445
+      terrain_sand_cloud_right: 5784134037096473482
+      terrain_sand_horizontal_left: 5804461980293712090
+      terrain_sand_horizontal_middle: 5998562443858731102
+      terrain_sand_horizontal_overhang_left: 4867952258666713675
+      terrain_sand_horizontal_overhang_right: 8519550260148325844
+      terrain_sand_horizontal_right: 5018837861726568391
+      terrain_sand_ramp_long_a: -1265980355359650619
+      terrain_sand_ramp_long_b: -1265983653894535252
+      terrain_sand_ramp_long_c: -1265982554382907041
+      terrain_sand_ramp_short_a: -1092015481782852641
+      terrain_sand_ramp_short_b: -1092014382271224430
+      terrain_sand_vertical_bottom: -1064634290332041446
+      terrain_sand_vertical_middle: 2874470420667684616
+      terrain_sand_vertical_top: 6367500389689671212
+      terrain_stone_block: -195596303125207462
+      terrain_stone_block_bottom: -8382190470262277504
+      terrain_stone_block_bottom_left: -1856168355375529624
+      terrain_stone_block_bottom_right: -3801485917126785187
+      terrain_stone_block_center: -3610826382458770510
+      terrain_stone_block_left: -8699002447955717642
+      terrain_stone_block_right: -1844385496216964021
+      terrain_stone_block_top: -6846506503466362690
+      terrain_stone_block_top_left: -1050114712734978422
+      terrain_stone_block_top_right: -4938445976469235337
+      terrain_stone_cloud: -88043985467117274
+      terrain_stone_cloud_background: -5524864719403805305
+      terrain_stone_cloud_left: -6755696623570960798
+      terrain_stone_cloud_middle: 879835790308262310
+      terrain_stone_cloud_right: -2043475345146820113
+      terrain_stone_horizontal_left: -8549051270112951609
+      terrain_stone_horizontal_middle: -4356754366832040097
+      terrain_stone_horizontal_overhang_left: -1049221347951135288
+      terrain_stone_horizontal_overhang_right: 4973806655951384893
+      terrain_stone_horizontal_right: -2464415168277690120
+      terrain_stone_ramp_long_a: 6127702786183066272
+      terrain_stone_ramp_long_b: 6127706084717950905
+      terrain_stone_ramp_long_c: 6127704985206322694
+      terrain_stone_ramp_short_a: 7022039270387563464
+      terrain_stone_ramp_short_b: 7022042568922448097
+      terrain_stone_vertical_bottom: 4607175376436590575
+      terrain_stone_vertical_middle: -5520088902575446655
+      terrain_stone_vertical_top: 7412378950120669959
+      torch_off: -570148242742732777
+      torch_on_a: 5383373185141391615
+      torch_on_b: 5383374284653019826
+      water: -3185508057913901456
+      water_top: -5388927068548403404
+      water_top_low: -5379719602587120419
+      weight: 7571106081475641113
+      window: 8210911950352161981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
