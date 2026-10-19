@@ -34,15 +34,4 @@ public class GameplayTile : Tile
     public bool breakable;
     public bool interactive;
     public bool liquid;
-
-    void OnValidate()
-    {
-        // Ensure that if the tile is solid, it has a collider type set to Grid
-        if (solid && colliderType == ColliderType.None)
-        {
-            colliderType = ColliderType.Grid;
-        }
-
-        ///TODO: Add additional validation logic as needed for other properties
-    }
 }

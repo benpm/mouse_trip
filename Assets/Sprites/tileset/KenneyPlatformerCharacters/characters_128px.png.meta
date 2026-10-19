@@ -196,7 +196,7 @@ TextureImporter:
   maxTextureSize: 8192
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -215,7 +215,9 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationMethod: 0
   spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -231,6 +233,45 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1465,6 +1506,15 @@ TextureImporter:
       character_green_jump: 3367602937679334985
       character_green_walk_a: -8794973024567634776
       character_green_walk_b: -8794969726032750143
+      character_mouse_climb_a: -9124376540766358802
+      character_mouse_climb_b: -9124377640277987013
+      character_mouse_duck: 6493129554952037308
+      character_mouse_front: -1482829534026440780
+      character_mouse_hit: -904309758814144434
+      character_mouse_idle: 1414886204587381183
+      character_mouse_jump: 6895602130363230465
+      character_mouse_walk_a: 1140729154467914864
+      character_mouse_walk_b: 1140732453002799497
       character_pink_climb_a: -2716960812490685461
       character_pink_climb_b: -2716959712979057250
       character_pink_duck: -2886406617552860777
@@ -1492,15 +1542,6 @@ TextureImporter:
       character_yellow_jump: 1971796798435807890
       character_yellow_walk_a: -6047689189675454305
       character_yellow_walk_b: -6047688090163826094
-      character_mouse_climb_a: -9124376540766358802
-      character_mouse_climb_b: -9124377640277987013
-      character_mouse_duck: 6493129554952037308
-      character_mouse_front: -1482829534026440780
-      character_mouse_hit: -904309758814144434
-      character_mouse_idle: 1414886204587381183
-      character_mouse_jump: 6895602130363230465
-      character_mouse_walk_a: 1140729154467914864
-      character_mouse_walk_b: 1140732453002799497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
