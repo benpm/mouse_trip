@@ -54,7 +54,7 @@ MonoBehaviour:
   deceleration: 100
   turnBoost: 1.6
   airAcceleration: 50
-  jumpForce: 1800
+  jumpForce: 18
   gravityScale: 5
   fallGravityMult: 1.6
   jumpCutMultiplier: 0.4
