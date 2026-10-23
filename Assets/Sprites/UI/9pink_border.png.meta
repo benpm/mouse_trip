@@ -343,15 +343,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":true,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":true,"isAlternate":false}'
     nameFileIdTable:
-      9pink_border_0: 796720828
-      9pink_border_1: 1289128007
-      9pink_border_2: -1923109767
-      9pink_border_3: -1231525065
-      9pink_border_4: -854887474
-      9pink_border_5: -1411354300
-      9pink_border_6: -509512042
-      9pink_border_7: -1007667605
-      9pink_border_8: 1061706604
+      9pink_border_0: 2102126946
+      9pink_border_1: -165109516
+      9pink_border_2: 606148920
+      9pink_border_3: -737442378
+      9pink_border_4: 1802452956
+      9pink_border_5: -764514858
+      9pink_border_6: -2105929863
+      9pink_border_7: 1080749338
+      9pink_border_8: -1193373596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
