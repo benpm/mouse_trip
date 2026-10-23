@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEditor;
-using System.ComponentModel;
 
 /**
  * GameplayTile is a custom tile class that extends Unity's Tile class.

@@ -21,8 +21,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float restartDelay = 0.5f;
 
     [Header("Events")]
-    public UnityEvent<int, int> onHealthChanged;
-    public UnityEvent onDeath;
+    public UnityEvent<int, int> onHealthChanged = new UnityEvent<int, int>();
+    public UnityEvent onDeath = new UnityEvent();
 
     private SpriteRenderer[] spriteRenderers;
 
@@ -42,25 +42,24 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(DamageInfo damageInfo)
+    public bool TakeDamage(DamageInfo damageInfo)
     {
-        if (isDead) return;
-        if (isInvincible) return;
+        if (isDead || isInvincible) return false;
 
         int finalDamage = damageInfo.instantKill ? currentHealth : damageInfo.amount;
 
-        currentHealth -= finalDamage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth - finalDamage, 0, maxHealth);
 
         onHealthChanged?.Invoke(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
             Die();
-            return;
+            return true;
         }
 
         StartCoroutine(InvincibleFlashCoroutine(damageInfo.invincibleTime));
+        return true;
     }
 
     private IEnumerator InvincibleFlashCoroutine(float invincibleTime)

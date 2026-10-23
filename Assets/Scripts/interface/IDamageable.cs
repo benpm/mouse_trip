@@ -1,4 +1,5 @@
 public interface IDamageable
 {
-    void TakeDamage(DamageInfo damageInfo);
+    /// <returns>true if the damage was applied (not blocked by death/invincibility).</returns>
+    bool TakeDamage(DamageInfo damageInfo);
 }

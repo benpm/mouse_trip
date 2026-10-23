@@ -28,10 +28,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityTurnSpeed = 0f;
     [SerializeField] bool useMouseGravityDir = false;
 
+    [Header("Tile Damage")]
+    [Tooltip("Cooldown/knockback/invincibility for damaging tiles; amount comes from GameplayTile.damage")]
+    [SerializeField] DamageProfile tileDamageProfile;
+
     public Vector2 gravityDir = Vector2.down;
-    // Privates
 
     Rigidbody2D rb;
+    IDamageable damageable;
     Vector2 velocity;
     bool isGrounded;
     bool jumpHeld;
@@ -40,14 +44,19 @@ public class PlayerController : MonoBehaviour
     float jumpBufferTimer;
     bool isTouchingWall;
     float wallContactTimer;
+    bool warnedNoProfile;
 
-    // Gravity frame, similar to an ortho-normal basis. 
+    readonly ContactPoint2D[] contacts = new ContactPoint2D[8];
+    int contactCount;
+
+    // Gravity frame, similar to an ortho-normal basis.
     Vector2 Up => -gravityDir;
     Vector2 RightAxis => Vector2.Perpendicular(gravityDir); // (1,0) when gravity is down
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        damageable = GetComponent<IDamageable>();
     }
 
     void Update()
@@ -67,7 +76,7 @@ public class PlayerController : MonoBehaviour
     }
 
     Vector2 GetMouseGravityDir()
-    { 
+    {
         Camera cam = Camera.main;
         if (cam == null) return gravityDir;
 
@@ -77,8 +86,7 @@ public class PlayerController : MonoBehaviour
         Vector2 dir = mouseWorld - centerWorld;
         if (dir.sqrMagnitude < 0.0001f) return gravityDir;
 
-        Vector2 targetDir = dir.normalized;
-        return targetDir;
+        return dir.normalized;
     }
 
     void UpdateGravityDirection()
@@ -104,6 +112,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         velocity = rb.linearVelocity;
+        contactCount = rb.GetContacts(contacts);
 
         // Decompose world velocity into the gravity frame:
         float vAlong = Vector2.Dot(velocity, RightAxis);
@@ -115,7 +124,7 @@ public class PlayerController : MonoBehaviour
             jumpCutQueued = false;
         }
 
-        CheckContacts(ref vAlong);
+        CheckContacts(ref vAlong, ref vUp);
         ApplyHorizontal(ref vAlong);
         CheckWall(ref vAlong);
         ApplyGravity(ref vUp);
@@ -132,47 +141,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void CheckContacts(ref float vAlong)
+    // Ground detection and tile effects. Wall handling lives in CheckWall (must run after ApplyHorizontal).
+    void CheckContacts(ref float vAlong, ref float vUp)
     {
-        ContactPoint2D[] contacts = new ContactPoint2D[8];
-        //var filter = new ContactFilter2D();
-        //filter.SetLayerMask(groundLayer);
-        //filter.useLayerMask = true;
-        int count = rb.GetContacts(contacts);
-
         bool groundContact = false;
-        bool wallLeft = false, wallRight = false;
+        bool damaged = false;
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < contactCount; i++)
         {
             ContactPoint2D contact = contacts[i];
-            Vector2 normal = contacts[i].normal;
-            float upDot = Vector2.Dot(normal, Up);
-            float sideDot = Vector2.Dot(normal, RightAxis);
-            // Nudge the hit point slightly inside the tile using the hit normal
-            Vector3 hitPosition = contact.point - (contact.normal * 0.01f);
-            Tilemap tilemap = contact.collider.GetComponent<Tilemap>();
+            float upDot = Vector2.Dot(contact.normal, Up);
+            if (upDot > 0.5f) groundContact = true;
 
-            // 3. Convert the world position to Tilemap cell coordinates
-            Vector3Int cellPosition = tilemap.WorldToCell(hitPosition);
-
-            // 4. Get the specific tile asset
-            GameplayTile tile = tilemap.GetTile(cellPosition) as GameplayTile;
-
-            if (tile.damagesPlayer)
+            if (!damaged && TryGetGameplayTile(contact, out GameplayTile tile) && tile.damagesPlayer)
             {
-                ///TODO: Player takes damage
-                Debug.Log($"Player took {tile.damage} damage from tile at {cellPosition}");
-            }
-
-            if (upDot > 0.5f)
-            {
-                groundContact = true;
-            }
-            else if (Mathf.Abs(sideDot) > 0.9f && Mathf.Abs(upDot) < 0.2f)
-            {
-                if (sideDot > 0) wallLeft = true;
-                if (sideDot < 0) wallRight = true;
+                damaged = ApplyTileDamage(contact, tile, ref vAlong, ref vUp);
             }
         }
 
@@ -186,31 +169,52 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             coyoteTimer -= Time.fixedDeltaTime;
         }
+    }
 
-        isTouchingWall = wallLeft || wallRight;
-        if (isTouchingWall)
+    bool TryGetGameplayTile(ContactPoint2D contact, out GameplayTile tile)
+    {
+        tile = null;
+        if (contact.collider == null || !contact.collider.TryGetComponent(out Tilemap tilemap)) return false;
+
+        // Nudge the hit point slightly inside the tile using the hit normal
+        Vector3 hitPosition = contact.point - contact.normal * 0.01f;
+        tile = tilemap.GetTile(tilemap.WorldToCell(hitPosition)) as GameplayTile;
+        return tile != null;
+    }
+
+    bool ApplyTileDamage(ContactPoint2D contact, GameplayTile tile, ref float vAlong, ref float vUp)
+    {
+        if (damageable == null) return false;
+        if (tileDamageProfile == null)
         {
-            wallContactTimer = 0.1f;
-            if (wallLeft && vAlong < 0) vAlong = 0;
-            if (wallRight && vAlong > 0) vAlong = 0;
-        }
-        else
-        {
-            wallContactTimer -= Time.fixedDeltaTime;
+            if (!warnedNoProfile)
+            {
+                Debug.LogWarning($"{name}: tileDamageProfile not set, damaging tiles are ignored", this);
+                warnedNoProfile = true;
+            }
+            return false;
         }
 
-        if (wallContactTimer > 0f) coyoteTimer = -1f;
+        // Knockback away from the tile surface, expressed in the gravity frame
+        float sideDot = Vector2.Dot(contact.normal, RightAxis);
+        Vector2 dir = new Vector2(Mathf.Abs(sideDot) > 0.01f ? Mathf.Sign(sideDot) : 1f, 1f);
+
+        DamageInfo info = tileDamageProfile.CreateDamageInfo(contact.collider.gameObject, dir);
+        info.amount = tile.damage;
+
+        if (!damageable.TakeDamage(info)) return false;
+
+        vAlong = info.knockback.x;
+        vUp = info.knockback.y;
+        return true;
     }
 
     void CheckWall(ref float vAlong)
     {
-        ContactPoint2D[] contacts = new ContactPoint2D[8];
-        int count = rb.GetContacts(contacts);
-
         bool wallLeft = false;
         bool wallRight = false;
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < contactCount; i++)
         {
             Vector2 normal = contacts[i].normal;
 
@@ -220,7 +224,7 @@ public class PlayerController : MonoBehaviour
 
             if (Mathf.Abs(sideDot) > 0.9f && Mathf.Abs(upDot) < 0.2f)
             {
-                if (sideDot > 0) wallLeft = true;  
+                if (sideDot > 0) wallLeft = true;
                 if (sideDot < 0) wallRight = true;
             }
         }
@@ -238,8 +242,7 @@ public class PlayerController : MonoBehaviour
             wallContactTimer -= Time.fixedDeltaTime;
         }
 
-        bool nearWall = wallContactTimer > 0f;
-        if (nearWall) coyoteTimer = -1f;
+        if (wallContactTimer > 0f) coyoteTimer = -1f;
     }
 
     void ApplyHorizontal(ref float vAlong)

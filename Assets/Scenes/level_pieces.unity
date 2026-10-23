@@ -301,6 +301,7 @@ MonoBehaviour:
   rotatePlayerToGravity: 1
   gravityTurnSpeed: 0
   useMouseGravityDir: 0
+  tileDamageProfile: {fileID: 11400000, guid: e004ca239dc972a449c69a0570a3f9b2, type: 2}
   gravityDir: {x: 0, y: -1}
 --- !u!50 &1322352352
 Rigidbody2D:
@@ -734,7 +735,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1
+      m_AllTileFlags: 2147483649
   - first: {x: 2, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -744,7 +745,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1
+      m_AllTileFlags: 2147483649
   - first: {x: 5, y: -1, z: 0}
     second:
       serializedVersion: 2
