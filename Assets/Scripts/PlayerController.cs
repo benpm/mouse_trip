@@ -32,10 +32,17 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Cooldown/knockback/invincibility for damaging tiles; amount comes from GameplayTile.damage")]
     [SerializeField] DamageProfile tileDamageProfile;
 
+    [Header("Debug")]
+    [Tooltip("Log contacts / jump state each physics step and draw contact normals")]
+    [SerializeField] bool debugContacts = false;
+
     public Vector2 gravityDir = Vector2.down;
 
     Rigidbody2D rb;
     IDamageable damageable;
+    readonly ContactPoint2D[] contacts = new ContactPoint2D[16];
+    readonly Vector2[] orientedContactNormals = new Vector2[16];
+    int contactCount;
     Vector2 velocity;
     bool isGrounded;
     bool jumpHeld;
@@ -43,11 +50,9 @@ public class PlayerController : MonoBehaviour
     float coyoteTimer;
     float jumpBufferTimer;
     bool isTouchingWall;
+    bool wallLeft, wallRight;
     float wallContactTimer;
     bool warnedNoProfile;
-
-    readonly ContactPoint2D[] contacts = new ContactPoint2D[8];
-    int contactCount;
 
     // Gravity frame, similar to an ortho-normal basis.
     Vector2 Up => -gravityDir;
@@ -57,19 +62,16 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         damageable = GetComponent<IDamageable>();
+        rb.gravityScale = 0f; // gravity is applied manually in ApplyGravity
     }
 
     void Update()
     {
         // Jump buffer - pressed just before landing
         if (Input.GetButtonDown("Jump"))
-        {
             jumpBufferTimer = jumpBufferTime;
-        }
         else
-        {
-            jumpBufferTimer -= Time.deltaTime;
-        }
+            jumpBufferTimer = Mathf.Max(0f, jumpBufferTimer - Time.deltaTime);
         jumpHeld = Input.GetButton("Jump");
         if (Input.GetButtonUp("Jump")) jumpCutQueued = true;
         UpdateGravityDirection();
@@ -85,17 +87,12 @@ public class PlayerController : MonoBehaviour
 
         Vector2 dir = mouseWorld - centerWorld;
         if (dir.sqrMagnitude < 0.0001f) return gravityDir;
-
         return dir.normalized;
     }
 
     void UpdateGravityDirection()
     {
-        Vector2 targetDir = gravityDir;
-        if (useMouseGravityDir)
-        {
-            targetDir = GetMouseGravityDir();
-        }
+        Vector2 targetDir = useMouseGravityDir ? GetMouseGravityDir() : gravityDir;
 
         if (gravityTurnSpeed <= 0f)
         {
@@ -103,7 +100,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Smoothly rotate current gravity toward the target direction
             float maxRadians = gravityTurnSpeed * Time.deltaTime;
             gravityDir = Vector3.RotateTowards(gravityDir, targetDir, maxRadians, 0f).normalized;
         }
@@ -112,7 +108,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         velocity = rb.linearVelocity;
-        contactCount = rb.GetContacts(contacts);
 
         // Decompose world velocity into the gravity frame:
         float vAlong = Vector2.Dot(velocity, RightAxis);
@@ -141,48 +136,63 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Ground detection and tile effects. Wall handling lives in CheckWall (must run after ApplyHorizontal).
+    // Unity does not document whether ContactPoint2D.collider or .otherCollider is this body
+    // for Rigidbody2D.GetContacts, nor which way the normal points. Resolve both explicitly:
+    // the normal is flipped (if needed) so it always points from the surface into the player,
+    // which for a convex collider means Dot(normal, centerOfMass - point) > 0.
+    // Ground, wall flags and tile effects are classified here; the into-wall velocity clamp
+    // lives in CheckWall because it must run after ApplyHorizontal.
     void CheckContacts(ref float vAlong, ref float vUp)
     {
+        contactCount = rb.GetContacts(contacts);
+
         bool groundContact = false;
         bool damaged = false;
+        wallLeft = wallRight = false;
+        Vector2 com = rb.worldCenterOfMass;
 
         for (int i = 0; i < contactCount; i++)
         {
             ContactPoint2D contact = contacts[i];
-            float upDot = Vector2.Dot(contact.normal, Up);
-            if (upDot > 0.5f) groundContact = true;
+            Vector2 normal = contact.normal;
+            if (Vector2.Dot(normal, com - contact.point) < 0f) normal = -normal;
+            orientedContactNormals[i] = normal;
+            float upDot = Vector2.Dot(normal, Up);
+            float sideDot = Vector2.Dot(normal, RightAxis);
 
-            if (!damaged && TryGetGameplayTile(contact, out GameplayTile tile) && tile.damagesPlayer)
+            Collider2D other = contact.collider.attachedRigidbody == rb ? contact.otherCollider : contact.collider;
+
+            if (debugContacts)
+                Debug.Log($"contact[{i}] other={(other ? other.name : "null")} n={normal} up={upDot:F2} side={sideDot:F2}");
+
+            if (!damaged && TryGetGameplayTile(other, contact.point, normal, out GameplayTile tile) && tile.damagesPlayer)
+                damaged = ApplyTileDamage(other, sideDot, tile, ref vAlong, ref vUp);
+
+            if (upDot > 0.5f)
+                groundContact = true;
+            else if (Mathf.Abs(sideDot) > 0.9f && Mathf.Abs(upDot) < 0.2f)
             {
-                damaged = ApplyTileDamage(contact, tile, ref vAlong, ref vUp);
+                if (sideDot > 0) wallLeft = true;
+                if (sideDot < 0) wallRight = true;
             }
         }
 
-        if (groundContact)
-        {
-            isGrounded = true;
-            coyoteTimer = coyoteTime;
-        }
-        else
-        {
-            isGrounded = false;
-            coyoteTimer -= Time.fixedDeltaTime;
-        }
+        isGrounded = groundContact;
+        if (groundContact) coyoteTimer = coyoteTime;
+        else coyoteTimer = Mathf.Max(0f, coyoteTimer - Time.fixedDeltaTime);
     }
 
-    bool TryGetGameplayTile(ContactPoint2D contact, out GameplayTile tile)
+    bool TryGetGameplayTile(Collider2D other, Vector2 point, Vector2 normal, out GameplayTile tile)
     {
         tile = null;
-        if (contact.collider == null || !contact.collider.TryGetComponent(out Tilemap tilemap)) return false;
+        if (!other || !other.TryGetComponent(out Tilemap tilemap)) return false;
 
-        // Nudge the hit point slightly inside the tile using the hit normal
-        Vector3 hitPosition = contact.point - contact.normal * 0.01f;
-        tile = tilemap.GetTile(tilemap.WorldToCell(hitPosition)) as GameplayTile;
+        // Nudge the hit point slightly inside the tile (against the oriented normal)
+        tile = tilemap.GetTile(tilemap.WorldToCell(point - normal * 0.01f)) as GameplayTile;
         return tile != null;
     }
 
-    bool ApplyTileDamage(ContactPoint2D contact, GameplayTile tile, ref float vAlong, ref float vUp)
+    bool ApplyTileDamage(Collider2D source, float sideDot, GameplayTile tile, ref float vAlong, ref float vUp)
     {
         if (damageable == null) return false;
         if (tileDamageProfile == null)
@@ -196,10 +206,9 @@ public class PlayerController : MonoBehaviour
         }
 
         // Knockback away from the tile surface, expressed in the gravity frame
-        float sideDot = Vector2.Dot(contact.normal, RightAxis);
         Vector2 dir = new Vector2(Mathf.Abs(sideDot) > 0.01f ? Mathf.Sign(sideDot) : 1f, 1f);
 
-        DamageInfo info = tileDamageProfile.CreateDamageInfo(contact.collider.gameObject, dir);
+        DamageInfo info = tileDamageProfile.CreateDamageInfo(source.gameObject, dir);
         info.amount = tile.damage;
 
         if (!damageable.TakeDamage(info)) return false;
@@ -211,26 +220,7 @@ public class PlayerController : MonoBehaviour
 
     void CheckWall(ref float vAlong)
     {
-        bool wallLeft = false;
-        bool wallRight = false;
-
-        for (int i = 0; i < contactCount; i++)
-        {
-            Vector2 normal = contacts[i].normal;
-
-            // Express the contact normal in the gravity frame
-            float sideDot = Vector2.Dot(normal, RightAxis);
-            float upDot = Vector2.Dot(normal, Up);
-
-            if (Mathf.Abs(sideDot) > 0.9f && Mathf.Abs(upDot) < 0.2f)
-            {
-                if (sideDot > 0) wallLeft = true;
-                if (sideDot < 0) wallRight = true;
-            }
-        }
-
         isTouchingWall = wallLeft || wallRight;
-
         if (isTouchingWall)
         {
             wallContactTimer = 0.1f;
@@ -242,6 +232,7 @@ public class PlayerController : MonoBehaviour
             wallContactTimer -= Time.fixedDeltaTime;
         }
 
+        // No coyote jumps off walls; grounded jumps are still allowed (see TryJump)
         if (wallContactTimer > 0f) coyoteTimer = -1f;
     }
 
@@ -274,12 +265,26 @@ public class PlayerController : MonoBehaviour
 
     void TryJump(ref float vUp)
     {
-        bool canJump = (isGrounded || coyoteTimer > 0f) && wallContactTimer <= 0f;
+        bool canJump = isGrounded || coyoteTimer > 0f;
+        if (debugContacts && jumpBufferTimer > 0f)
+            Debug.Log($"jump requested: grounded={isGrounded} coyote={coyoteTimer:F3} wallTimer={wallContactTimer:F3} canJump={canJump}");
         if (jumpBufferTimer > 0f && canJump)
         {
             vUp = jumpForce;
             jumpBufferTimer = 0f;
             coyoteTimer = 0f;
+            if (debugContacts) Debug.Log($"JUMP vUp={vUp}");
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (!debugContacts || !Application.isPlaying) return;
+        Gizmos.color = isGrounded ? Color.green : Color.red;
+        for (int i = 0; i < contactCount; i++)
+        {
+            Gizmos.DrawSphere(contacts[i].point, 0.05f);
+            Gizmos.DrawLine(contacts[i].point, contacts[i].point + orientedContactNormals[i] * 0.5f);
         }
     }
 }
