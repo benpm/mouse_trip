@@ -6,6 +6,8 @@ public class LevelPortal2D : MonoBehaviour
     [Header("Next Level")]
     [SerializeField] private string nextSceneName;
     [SerializeField] private bool useNextBuildIndex = true;
+    [Tooltip("Off: only loads when LoadNextLevel is called (e.g. by KeyDoor2D)")]
+    [SerializeField] private bool loadOnEnter = true;
 
     [Header("Target")]
     [SerializeField] private LayerMask playerLayer;
@@ -14,7 +16,7 @@ public class LevelPortal2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (hasTriggered) return;
+        if (!loadOnEnter || hasTriggered) return;
         if (!IsInPlayerLayer(other.gameObject)) return;
 
         hasTriggered = true;
@@ -22,7 +24,7 @@ public class LevelPortal2D : MonoBehaviour
         LoadNextLevel();
     }
 
-    private void LoadNextLevel()
+    public void LoadNextLevel()
     {
         if (useNextBuildIndex)
         {

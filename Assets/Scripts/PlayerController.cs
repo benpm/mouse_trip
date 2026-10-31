@@ -112,6 +112,8 @@ public class PlayerController : MonoBehaviour
         {
             float maxRadians = gravityTurnSpeed * Time.deltaTime;
             gravityDir = Vector3.RotateTowards(gravityDir, targetDir, maxRadians, 0f).normalized;
+            // RotateTowards stalls a fraction of a degree short at tiny deltaTime; finish the turn exactly.
+            if (Vector2.Angle(gravityDir, targetDir) < 0.5f) gravityDir = targetDir;
         }
     }
 

@@ -79,12 +79,20 @@ public class GravityTriggerTests
         var t = Trigger(pc, Vector2.right, restore: false);
         yield return null;
         t.SetActivated(true);
-        yield return null;
-        float a = Vector2.Angle(Vector2.down, pc.gravityDir);
+        // Frame time varies (headless editors run very fast): wait until it has visibly turned, and
+        // assert it never jumped straight to the target along the way.
+        float a = 0f, t0 = Time.time;
+        while (a < 0.5f && Time.time - t0 < 2f)
+        {
+            yield return null;
+            a = Vector2.Angle(Vector2.down, pc.gravityDir);
+            Assert.Less(a, 89f, "snapped instead of turning");
+        }
         Assert.Greater(a, 0.5f, "did not start turning");
-        Assert.Less(a, 89f, "snapped instead of turning");
-        for (int i = 0; i < 120 && Vector2.Angle(Vector2.right, pc.gravityDir) > 0.1f; i++) yield return null;
-        AssertDir(Vector2.right, pc.gravityDir);
+        // 90 deg at 4 rad/s takes ~0.4 s
+        int frames = 0;
+        while (Vector2.Angle(Vector2.right, pc.gravityDir) > 0.01f && Time.time - t0 < 3f) { yield return null; frames++; }
+        Assert.Less(Vector2.Distance(Vector2.right, pc.gravityDir), 1e-3f, $"did not converge after {frames} frames, {Time.time - t0:F2}s");
     }
 
     [UnityTest]
