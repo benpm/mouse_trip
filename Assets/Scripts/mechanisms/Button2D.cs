@@ -15,7 +15,7 @@ public class Button2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!IsInTriggerLayer(other.gameObject)) return;
+        if (!CanPress(other)) return;
 
         currentPressCount++;
 
@@ -24,7 +24,7 @@ public class Button2D : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!IsInTriggerLayer(other.gameObject)) return;
+        if (!CanPress(other)) return;
 
         currentPressCount--;
 
@@ -48,8 +48,10 @@ public class Button2D : MonoBehaviour
         }
     }
 
-    private bool IsInTriggerLayer(GameObject target)
+    // Only dynamic bodies press; static/kinematic colliders (e.g. the tilemap the button rests on) also raise trigger events.
+    private bool CanPress(Collider2D other)
     {
-        return (triggerLayer.value & (1 << target.layer)) != 0;
+        var rb = other.attachedRigidbody;
+        return rb && rb.bodyType == RigidbodyType2D.Dynamic && (triggerLayer.value & (1 << other.gameObject.layer)) != 0;
     }
 }

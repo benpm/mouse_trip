@@ -82,8 +82,11 @@ asmdefs, NUnit via `com.unity.test-framework`). One scene `Assets/Scenes/level_p
   UnityEvents, scene reload). Tile damage: `PlayerController.tileDamageProfile` (scene uses
   `SpikeDamageProfile`) supplies cooldown/knockback/invincibility, `GameplayTile.damage` supplies the
   amount, and `PlayerController` applies knockback in the gravity frame when `TakeDamage` returns true.
-- **Mechanisms.** `Button2D` (trigger, counts occupants) → `IActivationReceiver.SetActivated` →
-  `Door2D`. Targets are serialized as `MonoBehaviour[]` and type-checked at runtime.
+- **Mechanisms.** `Button2D` (trigger, counts occupants; only dynamic bodies on `triggerLayer` press,
+  so the tilemap it rests on cannot) → `IActivationReceiver.SetActivated` → `Door2D` (mirrors state),
+  `ToggleTiles2D` (swaps cells between an outline tile and a filled tile; flips on each press by
+  default, `followActivation` mirrors). Targets are serialized as `MonoBehaviour[]` and type-checked
+  at runtime. `Button2D.triggerLayer` defaults to 0 and must be set (1 = Default) or nothing presses.
 - **Interaction.** `PlayerInteract` keeps a trigger-overlap list of `IInteractable` and fires the
   first on `E`. `LevelPortal2D` loads next scene by build index.
 - Interfaces live in `Assets/Scripts/interface/`; cross-system coupling goes through them.

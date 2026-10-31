@@ -2058,9 +2058,9 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 0
-  category: decoration
-  solid: 0
+  m_ColliderType: 2
+  category: solid
+  solid: 1
   damagesPlayer: 0
   damage: 0
   collectible: 0

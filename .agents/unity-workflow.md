@@ -56,9 +56,14 @@ unity test . --mode PlayMode --test-filter 'TileDamageTests.DamagingTile_Reduces
 Exit 8 = failing tests (read `uagent tests`), other non-zero = run error (retryable). `--format json`
 on `unity test` produced an empty stdout on beta.13; parse the XML instead.
 
-Play mode verification: `unity command editor_play`, confirm frames advance with
-`eval 'return UnityEngine.Time.frameCount;'` twice, screenshot via eval, read console; see
-`unity:unity-cli` → `references/playmode-verification-loop.md`.
+PlayMode tests against the GUI editor: `test run --mode playmode` must use `--async_tests true`
+(sync requests drop on the play-mode domain reload); poll `Temp/pipeline_test_status.json` or
+`unity command test status` until `"status": "completed"`. EditMode: `test run --mode editor` works sync.
+
+Play mode verification: `unity command editor.playmode start|stop` (not `editor_play`), then
+`unity command eval_file <scratchpad>/probe.cs` to teleport the player (`rb.position = ...`) and read
+state; `unity command screenshot --output <png>`; console via `unity command console get --tail N`.
+See `unity:unity-cli` → `references/playmode-verification-loop.md`.
 
 ## Safe Mode
 
@@ -84,3 +89,8 @@ Read `uagent log`, fix C#, `uagent editor stop` then `start`.
 - Knockback is set as velocity and immediately fought by `ApplyHorizontal` deceleration (100 u/s²);
   tune or add a brief input lockout if the feel is wrong.
 - `PlayerHealth.Die` reloads by build index; works only for scenes in the build list.
+- `ToggleTiles2D` fills a cell even if the player stands in it (capsule gets pushed out along the
+  min-penetration axis). If a level needs it: `OverlapBoxAll` per cell before `Set(true)` and skip when
+  a Dynamic body is inside (toggle mode only; in follow mode a skip desyncs state).
+- `Tile Grid` has a 15x11 non-trigger `BoxCollider2D` with all layers excluded; physics *queries*
+  ignore exclude layers, so in-scene `OverlapPoint` checks must filter by collider type.
