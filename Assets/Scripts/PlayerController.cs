@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool debugContacts = false;
 
     public Vector2 gravityDir = Vector2.down;
+    Vector2 targetGravityDir;
 
     Rigidbody2D rb;
     IDamageable damageable;
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         damageable = GetComponent<IDamageable>();
         rb.gravityScale = 0f; // gravity is applied manually in ApplyGravity
+        targetGravityDir = gravityDir;
     }
 
     void Update()
@@ -90,9 +92,17 @@ public class PlayerController : MonoBehaviour
         return dir.normalized;
     }
 
+    // Turned toward over gravityTurnSpeed (snaps when 0); ignored while useMouseGravityDir.
+    public void SetGravityDirection(Vector2 dir)
+    {
+        if (dir.sqrMagnitude < 0.0001f) return;
+        targetGravityDir = dir.normalized;
+        if (gravityTurnSpeed <= 0f) gravityDir = targetGravityDir;
+    }
+
     void UpdateGravityDirection()
     {
-        Vector2 targetDir = useMouseGravityDir ? GetMouseGravityDir() : gravityDir;
+        Vector2 targetDir = useMouseGravityDir ? GetMouseGravityDir() : targetGravityDir;
 
         if (gravityTurnSpeed <= 0f)
         {
